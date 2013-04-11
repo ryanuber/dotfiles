@@ -1,4 +1,5 @@
 hardstatus alwayslastline "%{=}%-w%{+b r}%n %t%{-b w}%+w %=%c"
+shelltitle "" # Empty title by default
 vbell off # use audible bell
 bindkey ^[[1;3D prev # alt + left = tab left
 bindkey ^[[1;3C next # alt + right = tab right
