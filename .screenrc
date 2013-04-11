@@ -1,0 +1,8 @@
+hardstatus alwayslastline "%{=}%-w%{+b r}%n %t%{-b w}%+w %=%c"
+vbell off # use audible bell
+bindkey ^[[1;3D prev # alt + left = tab left
+bindkey ^[[1;3C next # alt + right = tab right
+bindkey ^[t screen # alt + t = new tab
+bindkey ^[d title # alt + d = tab description
+bindkey ^[s copy # alt + s = scrollback mode
+bindkey ^[q quit # alt + q = quit
