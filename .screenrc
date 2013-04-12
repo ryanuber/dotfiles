@@ -1,9 +1,20 @@
-hardstatus alwayslastline "%{=}%-w%{+b r}%n %t%{-b w}%+w %=%c"
-shelltitle "" # Empty title by default
-vbell off # use audible bell
-bindkey ^[[1;3D prev # alt + left = tab left
-bindkey ^[[1;3C next # alt + right = tab right
-bindkey ^[t screen # alt + t = new tab
-bindkey ^[d title # alt + d = tab description
-bindkey ^[s copy # alt + s = scrollback mode
-bindkey ^[q quit # alt + q = quit
+hardstatus alwayslastline "%{= kw}%-w%{+b g}%n %t%{-b w}%+w"
+
+shelltitle ""           # Empty title by default
+vbell off               # Use audible bell
+
+# Linux
+bindkey ^[[1;3D prev    # alt + left = tab left
+bindkey ^[[1;3C next    # alt + right = tab right
+bindkey ^[t screen      # alt + t = new tab
+bindkey ^[d title       # alt + d = tab description
+bindkey ^[s copy        # alt + s = scrollback mode
+bindkey ^[q quit        # alt + q = quit
+
+# Mac
+#bindkey œ quit          # alt + q = quit
+#bindkey ^[b prev        # alt + left = tab left
+#bindkey ^[f next        # alt + right = tab right
+#bindkey ∂ title         # alt + d = set title
+#bindkey † screen        # alt + t = new tab
+#bindkey ß copy          # alt + s = scrollback mode
