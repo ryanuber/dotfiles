@@ -1,6 +1,6 @@
 hardstatus alwayslastline "%{= kw}%-w%{+b g}%n %t%{-b w}%+w"
 
-shelltitle ""           # Empty title by default
+shelltitle "$ |bash"
 vbell off               # Use audible bell
 
 # Linux
