@@ -32,3 +32,9 @@ autocmd BufRead,BufNewFile *.yaml,*.yml setlocal tabstop=2 softtabstop=2 shiftwi
 
 " JSON documents
 autocmd BufRead,BufNewFile *.json setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
+" CSS files
+autocmd BufRead,BufNewFile *.css setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
+" HTML documents
+autocmd BufRead,BufNewFile *.html setlocal tabstop=4 softtabstop=4 shiftwidth=4
