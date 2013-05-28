@@ -13,7 +13,7 @@ set number
 set cursorline
 hi CursorLine cterm=NONE ctermbg=darkgrey
 hi CursorLineNr cterm=NONE ctermfg=white
-hi LineNr cterm=NONE ctermfg=darkgrey
+hi LineNr cterm=NONE ctermfg=grey
 
 " Markdown files
 autocmd BufRead,BufNewFile *.md,*.markdown setlocal tw=80 wrap syntax=off
