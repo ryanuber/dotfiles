@@ -12,8 +12,8 @@ set number
 " Line highlighting options
 set cursorline
 hi CursorLine cterm=NONE ctermbg=darkgrey
-hi CursorLineNr cterm=NONE ctermfg=white
-hi LineNr cterm=NONE ctermfg=grey
+hi CursorLineNr cterm=NONE ctermfg=grey
+hi LineNr cterm=NONE ctermfg=darkgrey
 
 " Markdown files
 autocmd BufRead,BufNewFile *.md,*.markdown setlocal tw=80 wrap syntax=off
