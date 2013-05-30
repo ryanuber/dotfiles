@@ -9,11 +9,11 @@ set smarttab
 set expandtab
 set number
 
-" Line highlighting options (commented due to performance issues)
-"set cursorline
-"hi CursorLine cterm=NONE ctermbg=darkgrey
-"hi CursorLineNr cterm=NONE ctermfg=grey
-"hi LineNr cterm=NONE ctermfg=darkgrey
+" Line highlighting options (may cause performance issues)
+set cursorline
+hi CursorLine cterm=NONE ctermbg=darkgrey
+hi CursorLineNr cterm=NONE ctermfg=grey
+hi LineNr cterm=NONE ctermfg=darkgrey
 
 " Markdown files
 autocmd BufRead,BufNewFile *.md,*.markdown setlocal tw=80 wrap syntax=off
