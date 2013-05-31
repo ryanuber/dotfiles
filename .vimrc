@@ -1,6 +1,6 @@
 " These will be applied to all unknown extensions and every known file
 " extension unless overridden later on
-set syntax=on
+syntax on
 set title
 set tabstop=4
 set softtabstop=4
