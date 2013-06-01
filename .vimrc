@@ -15,6 +15,11 @@ hi CursorLine cterm=NONE ctermbg=darkgrey
 hi CursorLineNr cterm=NONE ctermfg=grey
 hi LineNr cterm=NONE ctermfg=darkgrey
 
+" Remember cursor position and jump to it on file open
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
 " Markdown files
 autocmd BufRead,BufNewFile *.md,*.markdown setlocal tw=80 wrap syntax=off
 
