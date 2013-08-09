@@ -49,3 +49,7 @@ autocmd BufRead,BufNewFile *.css setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 " HTML documents
 autocmd BufRead,BufNewFile *.html setlocal tabstop=4 softtabstop=4 shiftwidth=4
+
+" Highlight line parse > 80 chars
+highlight toolong ctermbg=red ctermfg=white
+match toolong /\%81v.*/
