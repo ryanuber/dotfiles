@@ -2,12 +2,14 @@
 " extension unless overridden later on
 syntax on
 set title
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set ts=4
+set sts=4
+set sw=4
 set smarttab
 set expandtab
 set number
+set nosi
+set noai
 
 " Line highlighting options (may cause performance issues)
 set cursorline
@@ -20,36 +22,40 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+" Highlight chars after column 80
+hi toolong ctermbg=red ctermfg=white
+match toolong /\%81v.*/
+
 " Markdown files
-autocmd BufRead,BufNewFile *.md,*.markdown setlocal tw=80 wrap syntax=off
+au BufRead,BufNewFile *.md,*.markdown setl tw=80 wrap syntax=off
 
 " C files
-autocmd BufRead,BufNewFile *.c,*.cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4
+au FileType c setl ts=4 sts=4 sw=4
+au FileType cpp setl ts=4 sts=4 sw=4
 
 " Python files
-autocmd BufRead,BufNewFile *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
+au FileType python setl ts=4 sts=4 sw=4
 
 " Shell scripts
-autocmd BufRead,BufNewFile *.sh,*.bash setlocal tabstop=4 softtabstop=4 shiftwidth=4
+au FileType sh setl ts=4 sts=4 sw=4
 
 " PHP files
-autocmd BufRead,BufNewFile *.php setlocal tabstop=4 softtabstop=4 shiftwidth=4
+au FileType php setl ts=4 sts=4 sw=4
 
 " Ruby files
-autocmd BufRead,BufNewFile *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+au FileType ruby setl ts=2 sts=2 sw=2
 
 " YAML documents
-autocmd BufRead,BufNewFile *.yaml,*.yml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+au BufRead,BufNewFile *.yaml,*.yml setl ts=2 sts=2 sw=2
 
 " JSON documents
-autocmd BufRead,BufNewFile *.json setlocal tabstop=2 softtabstop=2 shiftwidth=2
+au BufRead,BufNewFile *.json setl ts=2 sts=2 sw=2
 
 " CSS files
-autocmd BufRead,BufNewFile *.css setlocal tabstop=2 softtabstop=2 shiftwidth=2
+au FileType css setl ts=2 sts=2 sw=2
 
 " HTML documents
-autocmd BufRead,BufNewFile *.html setlocal tabstop=4 softtabstop=4 shiftwidth=4
+au FileType html setl ts=4 sts=4 sw=4
 
-" Highlight line parse > 80 chars
-highlight toolong ctermbg=red ctermfg=white
-match toolong /\%81v.*/
+" Disable comment continuation *AFTER* defaults from autocmd are collected
+au FileType * setl fo-=cro
