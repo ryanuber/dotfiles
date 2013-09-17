@@ -7,6 +7,7 @@ set sts=4
 set sw=4
 set smarttab
 set expandtab
+set ruler
 set number
 set nosi
 set noai
@@ -24,7 +25,7 @@ endif
 
 " Highlight chars after column 80
 hi toolong ctermbg=red ctermfg=white
-match toolong /\%81v.*/
+match toolong /\%81v.\+/
 
 " Markdown files
 au BufRead,BufNewFile *.md,*.markdown setl tw=80 wrap syntax=off
