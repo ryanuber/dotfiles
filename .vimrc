@@ -27,6 +27,10 @@ endif
 hi toolong ctermbg=red ctermfg=white
 match toolong /\%81v.\+/
 
+" Highlight trailing whitespace
+hi trailws ctermbg=red ctermfg=white
+2match trailws /\s\+\%#\@<!$/
+
 " Markdown files
 au BufRead,BufNewFile *.md,*.markdown setl tw=80 wrap syntax=off
 
