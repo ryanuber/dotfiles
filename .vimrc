@@ -38,6 +38,9 @@ au BufRead,BufNewFile *.md,*.markdown setl tw=80 wrap syntax=off
 au FileType c setl ts=4 sts=4 sw=4
 au FileType cpp setl ts=4 sts=4 sw=4
 
+" Makefiles
+au FileType make set noexpandtab
+
 " Python files
 au FileType python setl ts=4 sts=4 sw=4
 
