@@ -68,7 +68,7 @@ au FileType html setl ts=4 sts=4 sw=4
 " GO files
 au BufRead,BufNewFile *.go set ft=go
 au FileType go setl nosm noex
-au FileType go setl ts=2 sts=2 sw=2
+au FileType go setl ts=4 sts=4 sw=4
 
 " Disable comment continuation *AFTER* defaults from autocmd are collected
 au FileType * setl fo-=cro
