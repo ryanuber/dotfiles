@@ -1,14 +1,14 @@
 " These will be applied to all unknown extensions and every known file
 " extension unless overridden later on
-syntax on
+syn on
 set title
 set ts=4
 set sts=4
 set sw=4
-set smarttab
-set expandtab
-set ruler
-set number
+set sm
+set ex
+set ru
+set nu
 set nosi
 set noai
 
@@ -32,14 +32,14 @@ hi trailws ctermbg=red ctermfg=white
 2match trailws /\s\+\%#\@<!$/
 
 " Markdown files
-au BufRead,BufNewFile *.md,*.markdown setl tw=80 wrap syntax=off
+au BufRead,BufNewFile *.md,*.markdown setl tw=80 wrap syn=off
 
 " C files
 au FileType c setl ts=4 sts=4 sw=4
 au FileType cpp setl ts=4 sts=4 sw=4
 
 " Makefiles
-au FileType make set noexpandtab
+au FileType make set noex
 
 " Python files
 au FileType python setl ts=4 sts=4 sw=4
@@ -64,6 +64,11 @@ au FileType css setl ts=2 sts=2 sw=2
 
 " HTML documents
 au FileType html setl ts=4 sts=4 sw=4
+
+" GO files
+au BufRead,BufNewFile *.go set ft=go
+au FileType go setl nosm noex
+au FileType go setl ts=2 sts=2 sw=2
 
 " Disable comment continuation *AFTER* defaults from autocmd are collected
 au FileType * setl fo-=cro
