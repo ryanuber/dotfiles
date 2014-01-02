@@ -5,8 +5,8 @@ set title
 set ts=4
 set sts=4
 set sw=4
-set sm
-set ex
+set smarttab
+set expandtab
 set ru
 set nu
 set nosi
@@ -67,7 +67,7 @@ au FileType html setl ts=4 sts=4 sw=4
 
 " GO files
 au BufRead,BufNewFile *.go set ft=go
-au FileType go setl nosm noex
+au FileType go setl nosmarttab noexpandtab
 au FileType go setl ts=4 sts=4 sw=4
 
 " Disable comment continuation *AFTER* defaults from autocmd are collected
