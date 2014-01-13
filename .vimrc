@@ -39,7 +39,7 @@ au FileType c setl ts=4 sts=4 sw=4
 au FileType cpp setl ts=4 sts=4 sw=4
 
 " Makefiles
-au FileType make set noex
+au FileType make set noexpandtab
 
 " Python files
 au FileType python setl ts=4 sts=4 sw=4
