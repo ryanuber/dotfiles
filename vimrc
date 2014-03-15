@@ -63,6 +63,8 @@ au BufRead,BufNewFile *.json setl ts=2 sts=2 sw=2
 au FileType css setl ts=2 sts=2 sw=2
 
 " HTML documents
+au BufRead,BufNewFile *.html.erb,*.html.markdown set ft=html
+au FileType html setl nosmarttab noexpandtab
 au FileType html setl ts=4 sts=4 sw=4
 
 " GO files
