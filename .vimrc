@@ -12,6 +12,10 @@ set nu
 set nosi
 set noai
 
+" Colors
+"colorscheme zenburn
+colorscheme wombat256
+
 " Line highlighting options (may cause performance issues)
 set cursorline
 hi CursorLine cterm=NONE ctermbg=darkgrey
