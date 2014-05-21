@@ -18,9 +18,6 @@ colorscheme wombat256
 
 " Line highlighting options (may cause performance issues)
 set cursorline
-hi CursorLine cterm=NONE ctermbg=darkgrey
-hi CursorLineNr cterm=NONE ctermfg=grey
-hi LineNr cterm=NONE ctermfg=darkgrey
 
 " Remember cursor position and jump to it on file open
 if has("autocmd")
