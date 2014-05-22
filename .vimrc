@@ -70,12 +70,10 @@ au FileType html setl ts=4 sts=4 sw=4
 
 " GO files
 au BufRead,BufNewFile *.go set ft=go
-au FileType go :au BufWritePost *
-  \ call system("/usr/bin/env gofmt -w " . expand("%:p")) |
-  \ :e |
-  \ set ft=go
 au FileType go setl nosmarttab noexpandtab
 au FileType go setl ts=4 sts=4 sw=4
+au FileType go :au BufWritePost *
+  \ call system("/usr/bin/env gofmt -w " . expand("%:p"))
 
 " Disable comment continuation *AFTER* defaults from autocmd are collected
 au FileType * setl fo-=cro
