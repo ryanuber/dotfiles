@@ -66,7 +66,7 @@ au FileType css setl ts=2 sts=2 sw=2
 " HTML documents
 au BufRead,BufNewFile *.html.erb,*.html.markdown set ft=html
 au FileType html setl nosmarttab noexpandtab
-au FileType html setl ts=4 sts=4 sw=4
+au FileType html setl ts=2 sts=2 sw=2
 
 " GO files
 au BufRead,BufNewFile *.go set ft=go
