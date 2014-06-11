@@ -26,12 +26,12 @@ if has("autocmd")
 endif
 
 " NERDTree
-autocmd vimenter * NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&
-  \ b:NERDTreeType == "primary") | q | endif
-autocmd vimenter * wincmd p
-map <C-z> :wincmd p<CR>
-map <C-n> :NERDTreeToggle<CR>
+"autocmd vimenter * NERDTree
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&
+"  \ b:NERDTreeType == "primary") | q | endif
+"autocmd vimenter * wincmd p
+"map <C-z> :wincmd p<CR>
+"map <C-n> :NERDTreeToggle<CR>
 
 " Highlight chars after column 80
 hi toolong ctermbg=red ctermfg=white
