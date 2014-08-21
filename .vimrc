@@ -25,10 +25,9 @@ if has("autocmd")
     \ exe "normal! g'\"" | endif
 endif
 
-" rfc3676 (Text/Plain)
-" This will highlight characters beyond the 78th column
+" This will highlight characters beyond the 80th column
 hi toolong ctermbg=red ctermfg=white
-match toolong /\%80v.\+/
+match toolong /\%81v.\+/
 
 " Highlight trailing whitespace.
 " I would normally just have vim remove it but this can be problmatic when
@@ -36,8 +35,11 @@ match toolong /\%80v.\+/
 hi trailws ctermbg=red ctermfg=white
 2match trailws /\s\+\%#\@<!$/
 
-" Markdown files, auto-wrap at rfc3676 (78 column max)
-au BufRead,BufNewFile *.md,*.markdown setl tw=78 wrap syn=off
+" Git commit messages
+au FileType gitcommit setl tw=72 wrap syn=off
+
+" Markdown files
+au BufRead,BufNewFile *.md,*.markdown setl tw=80 wrap syn=off
 
 " C files
 au FileType c setl ts=4 sts=4 sw=4
