@@ -25,24 +25,19 @@ if has("autocmd")
     \ exe "normal! g'\"" | endif
 endif
 
-" NERDTree
-"autocmd vimenter * NERDTree
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&
-"  \ b:NERDTreeType == "primary") | q | endif
-"autocmd vimenter * wincmd p
-"map <C-z> :wincmd p<CR>
-"map <C-n> :NERDTreeToggle<CR>
-
-" Highlight chars after column 80
+" rfc3676 (Text/Plain)
+" This will highlight characters beyond the 78th column
 hi toolong ctermbg=red ctermfg=white
-match toolong /\%81v.\+/
+match toolong /\%80v.\+/
 
-" Highlight trailing whitespace
+" Highlight trailing whitespace.
+" I would normally just have vim remove it but this can be problmatic when
+" editing large, existing codebases which haven't followed this strictly.
 hi trailws ctermbg=red ctermfg=white
 2match trailws /\s\+\%#\@<!$/
 
-" Markdown files
-au BufRead,BufNewFile *.md,*.markdown setl tw=80 wrap syn=off
+" Markdown files, auto-wrap at rfc3676 (78 column max)
+au BufRead,BufNewFile *.md,*.markdown setl tw=78 wrap syn=off
 
 " C files
 au FileType c setl ts=4 sts=4 sw=4
