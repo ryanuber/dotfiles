@@ -81,6 +81,8 @@ au FileType html setl nosmarttab noexpandtab
 au FileType html setl ts=2 sts=2 sw=2
 
 " Go files
+au FileType go setl nosmarttab noexpandtab
+au FileType go setl ts=4 sts=4 sw=4
 au FileType go :au BufWritePost * :Fmt
 
 " Disable comment continuation *AFTER* defaults from autocmd are collected
