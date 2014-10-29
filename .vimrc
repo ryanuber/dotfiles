@@ -12,8 +12,10 @@ set nu
 set nosi
 set noai
 
+" Enable filetype detection
+filetype plugin on
+
 " Colors
-"colorscheme zenburn
 colorscheme wombat256
 
 " Line highlighting options (may cause performance issues)
@@ -26,14 +28,18 @@ if has("autocmd")
 endif
 
 " This will highlight characters beyond the 80th column
-hi toolong ctermbg=red ctermfg=white
+hi toolong ctermbg=52
 match toolong /\%81v.\+/
 
 " Highlight trailing whitespace.
 " I would normally just have vim remove it but this can be problmatic when
 " editing large, existing codebases which haven't followed this strictly.
-hi trailws ctermbg=red ctermfg=white
+hi trailws ctermbg=52
 2match trailws /\s\+\%#\@<!$/
+
+" Split settings
+set splitright
+set splitbelow
 
 " Git commit messages
 au FileType gitcommit setl tw=72 wrap syn=off
@@ -74,12 +80,8 @@ au BufRead,BufNewFile *.html.erb,*.html.markdown set ft=html
 au FileType html setl nosmarttab noexpandtab
 au FileType html setl ts=2 sts=2 sw=2
 
-" GO files
-au BufRead,BufNewFile *.go set ft=go
-au FileType go setl nosmarttab noexpandtab
-au FileType go setl ts=4 sts=4 sw=4
-au FileType go :au BufWritePost *
-  \ call system("/usr/bin/env gofmt -w " . expand("%:p"))
+" Go files
+au FileType go :au BufWritePost * :Fmt
 
 " Disable comment continuation *AFTER* defaults from autocmd are collected
 au FileType * setl fo-=cro
