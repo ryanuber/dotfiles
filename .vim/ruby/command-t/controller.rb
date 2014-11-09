@@ -207,10 +207,6 @@ module CommandT
       VIM::get_string('g:CommandTAcceptSelectionTabCommand') || 'tabe'
     end
 
-    def default_split_command
-      VIM::get_string('g:CommandTDefaultSplitCommand') || 'sp'
-    end
-
     def split_command
       VIM::get_string('g:CommandTAcceptSelectionSplitCommand') || 'sp'
     end
@@ -303,7 +299,7 @@ module CommandT
         current_buffer_visible_in_other_window
         VIM::get_string('g:CommandTAcceptSelectionCommand') || 'e'
       else
-        self.default_split_command
+        'sp'
       end
     end
 
