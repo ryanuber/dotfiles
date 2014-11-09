@@ -1,4 +1,5 @@
 .vim/ruby/command-t/*.o
 .vim/ruby/command-t/*.bundle
 .vim/ruby/command-t/Makefile
+.vim/ruby/command-t/mkmf.log
 .vim/.netrwhist
