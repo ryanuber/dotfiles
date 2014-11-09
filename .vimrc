@@ -16,7 +16,7 @@ set noai
 filetype plugin on
 
 " Colors
-colorscheme wombat256
+colorscheme ryanuber256
 
 " Line highlighting options (may cause performance issues)
 set cursorline
