@@ -15,7 +15,7 @@ if exists("syntax_on")
 	syntax reset
 endif
 
-let colors_name = "wombat256"
+let colors_name = "ryanuber256"
 
 
 " General colors
@@ -52,7 +52,7 @@ hi Function		ctermfg=203		cterm=none		guifg=#cae682	gui=none
 hi Identifier	ctermfg=180		cterm=none		guifg=#cae682	gui=none
 hi Type			ctermfg=229		cterm=none		guifg=#cae682	gui=none
 hi Special		ctermfg=194		cterm=none		guifg=#e7f6da	gui=none
-hi String		ctermfg=230		cterm=none		guifg=#95e454	gui=italic
+hi String		ctermfg=156		cterm=none		guifg=#95e454	gui=italic
 hi Comment		ctermfg=246		cterm=none		guifg=#99968b	gui=italic
 hi Todo			ctermfg=245		cterm=none		guifg=#8f8f8f	gui=italic
 
