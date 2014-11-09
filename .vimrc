@@ -43,6 +43,8 @@ hi trailws ctermbg=52
 " Split settings
 set splitright
 set splitbelow
+nnoremap <C-j> <C-w><Left>
+nnoremap <C-k> <C-w><Right>
 
 " Git commit messages
 au FileType gitcommit setl tw=72 wrap syn=off
