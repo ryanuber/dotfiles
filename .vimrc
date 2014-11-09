@@ -21,6 +21,9 @@ colorscheme wombat256
 " Line highlighting options (may cause performance issues)
 set cursorline
 
+" Remap leader key
+let mapleader=","
+
 " Remember cursor position and jump to it on file open
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
