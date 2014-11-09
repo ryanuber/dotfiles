@@ -41,6 +41,7 @@ hi trailws ctermbg=52
 2match trailws /\s\+\%#\@<!$/
 
 " Split settings
+let g:CommandTDefaultSplitCommand = 'vs'
 set splitright
 set splitbelow
 
