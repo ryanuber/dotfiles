@@ -9,6 +9,7 @@ alias lowerright move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2 sc
 
 # Layouts
 layout 1 'Mail':REPEAT               ${lefthalf}   0
+layout 1 'Google Chrome':REPEAT      ${lefthalf}   0
 layout 1 'Slack':REPEAT              ${upperright} 0
 layout 1 'Textual IRC Client':REPEAT ${lowerright} 0
 layout 2 'Terminal':MAIN_FIRST       ${righthalf} | ${upperleft} | ${lowerleft}  0
@@ -24,9 +25,9 @@ bind 1:cmd;ctrl layout 1
 bind 2:cmd;ctrl layout 2
 
 # Focus Bindings
-bind right:cmd    focus right
-bind left:cmd     focus left
-bind up:cmd       focus up
-bind down:cmd     focus down
-bind up:cmd;alt   focus behind
-bind down:cmd;alt focus behind
+bind right:cmd     focus right
+bind left:cmd      focus left
+bind up:cmd        focus up
+bind down:cmd      focus down
+bind up:cmd;ctrl   focus behind
+bind down:cmd;ctrl focus behind
