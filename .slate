@@ -1,0 +1,32 @@
+# Positions
+alias full       move screenOriginX;screenOriginY                             screenSizeX;screenSizeY
+alias lefthalf   move screenOriginX;screenOriginY                             screenSizeX/2;screenSizeY
+alias righthalf  move screenOriginX+screenSizeX/2;screenOriginY               screenSizeX/2;screenSizeY
+alias upperleft  move screenOriginX;screenOriginY                             screenSizeX/2;screenSizeY/2
+alias upperright move screenOriginX+screenSizeX/2;screenOriginY               screenSizeX/2;screenSizeY/2
+alias lowerleft  move screenOriginX;screenOriginY+screenSizeY/2               screenSizeX/2;screenSizeY/2
+alias lowerright move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2
+
+# Layouts
+layout 1 'Mail':REPEAT               ${lefthalf}   0
+layout 1 'Slack':REPEAT              ${upperright} 0
+layout 1 'Textual IRC Client':REPEAT ${lowerright} 0
+layout 2 'Terminal':MAIN_FIRST       ${righthalf} | ${upperleft} | ${lowerleft}  0
+
+# Bindings
+bind y:cmd;ctrl ${lefthalf}
+bind o:cmd;ctrl ${righthalf}
+bind u:cmd;ctrl ${upperleft}
+bind i:cmd;ctrl ${upperright}
+bind j:cmd;ctrl ${lowerleft}
+bind k:cmd;ctrl ${lowerright}
+bind 1:cmd;ctrl layout 1
+bind 2:cmd;ctrl layout 2
+
+# Focus Bindings
+bind right:cmd    focus right
+bind left:cmd     focus left
+bind up:cmd       focus up
+bind down:cmd     focus down
+bind up:cmd;alt   focus behind
+bind down:cmd;alt focus behind
