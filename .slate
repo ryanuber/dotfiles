@@ -14,20 +14,21 @@ layout 1 'Slack':REPEAT              ${upperright} 0
 layout 1 'Textual IRC Client':REPEAT ${lowerright} 0
 layout 2 'Terminal':MAIN_FIRST       ${righthalf} | ${upperleft} | ${lowerleft}  0
 
+# Hyper key
+alias hyper ctrl;shift;alt;cmd
+
 # Bindings
-bind y:cmd;ctrl ${lefthalf}
-bind o:cmd;ctrl ${righthalf}
-bind u:cmd;ctrl ${upperleft}
-bind i:cmd;ctrl ${upperright}
-bind j:cmd;ctrl ${lowerleft}
-bind k:cmd;ctrl ${lowerright}
-bind 1:cmd;ctrl layout 1
-bind 2:cmd;ctrl layout 2
+bind y:${hyper} ${lefthalf}
+bind o:${hyper} ${righthalf}
+bind u:${hyper} ${upperleft}
+bind i:${hyper} ${upperright}
+bind j:${hyper} ${lowerleft}
+bind k:${hyper} ${lowerright}
+bind 1:${hyper} layout 1
+bind 2:${hyper} layout 2
 
 # Focus Bindings
-bind right:cmd     focus right
-bind left:cmd      focus left
-bind up:cmd        focus up
-bind down:cmd      focus down
-bind up:cmd;ctrl   focus behind
-bind down:cmd;ctrl focus behind
+bind d:${hyper} focus right
+bind a:${hyper} focus left
+bind w:${hyper} focus up
+bind s:${hyper} focus down
