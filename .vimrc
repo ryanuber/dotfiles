@@ -11,7 +11,7 @@ set ru
 set nu
 set nosi
 set noai
-set list
+set nolist
 
 " Enable filetype detection
 filetype plugin on

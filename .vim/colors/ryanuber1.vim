@@ -15,7 +15,7 @@ if exists("syntax_on")
 	syntax reset
 endif
 
-let colors_name = "ryanuber256"
+let colors_name = "ryanuber1"
 
 
 " General colors

@@ -5,7 +5,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "ryanuber_hybrid"
+let colors_name = "ryanuber2"
 
 let s:vmode      = "cterm"
 let s:background = "234"
@@ -20,7 +20,7 @@ let s:darkcyan   = "24"
 let s:darkred    = "52"
 let s:darkpurple = "53"
 let s:foreground = "254"
-let s:selection  = "237"
+let s:selection  = "241"
 let s:line       = "235"
 let s:comment    = "243"
 let s:red        = "109"
@@ -29,6 +29,7 @@ let s:yellow     = "193"
 let s:green      = "149"
 let s:aqua       = "109"
 let s:blue       = "153"
+let s:black      = "0"
 let s:purple     = "139"
 
 let s:none   = "NONE"
@@ -53,6 +54,7 @@ exe "let s:bg_yellow     = ' ".s:vmode."bg=".s:yellow    ."'"
 exe "let s:bg_green      = ' ".s:vmode."bg=".s:green     ."'"
 exe "let s:bg_aqua       = ' ".s:vmode."bg=".s:aqua      ."'"
 exe "let s:bg_blue       = ' ".s:vmode."bg=".s:blue      ."'"
+exe "let s:bg_black      = ' ".s:vmode."bg=".s:black     ."'"
 exe "let s:bg_purple     = ' ".s:vmode."bg=".s:purple    ."'"
 exe "let s:bg_window     = ' ".s:vmode."bg=".s:window    ."'"
 exe "let s:bg_darkcolumn = ' ".s:vmode."bg=".s:darkcolumn."'"
@@ -141,7 +143,7 @@ exe "hi! Folded"        .s:fg_comment     .s:bg_darkcolumn  .s:fmt_none
 exe "hi! FoldColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 exe "hi! SignColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 "		Incsearch"
-exe "hi! LineNr"        .s:fg_selection   .s:bg_none        .s:fmt_none
+exe "hi! LineNr"        .s:fg_selection   .s:bg_black       .s:fmt_none
 exe "hi! CursorLineNr"  .s:fg_yellow      .s:bg_none        .s:fmt_bold
 exe "hi! MatchParen"    .s:fg_background  .s:bg_changebg    .s:fmt_none
 exe "hi! ModeMsg"       .s:fg_green       .s:bg_none        .s:fmt_none
@@ -170,7 +172,7 @@ exe "hi! WarningMsg"    .s:fg_red         .s:bg_none        .s:fmt_none
 "		WildMenu"
 
 " Use Xresources for background colour
-exe "hi! Normal"        .s:fg_foreground  .s:bg_none        .s:fmt_none
+exe "hi! Normal"        .s:fg_foreground  .s:bg_background  .s:fmt_none
 
 exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
 
