@@ -11,12 +11,13 @@ set ru
 set nu
 set nosi
 set noai
+set list
 
 " Enable filetype detection
 filetype plugin on
 
 " Colors
-colorscheme ryanuber256
+colorscheme ryanuber2
 
 " Line highlighting options (may cause performance issues)
 set cursorline
@@ -29,6 +30,9 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
     \ exe "normal! g'\"" | endif
 endif
+
+" Mark indentation
+set listchars=tab:·\ 
 
 " This will highlight characters beyond the 80th column
 hi toolong ctermbg=52
