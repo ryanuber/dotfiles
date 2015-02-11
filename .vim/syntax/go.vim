@@ -115,7 +115,7 @@ syn keyword     goBuiltins          append cap close complex copy delete imag le
 syn keyword     goBuiltins          make new panic print println real recover
 syn keyword     goBoolean           iota true false nil
 
-hi def link     goBuiltins          Special
+hi def link     goBuiltins          Function
 hi def link     goBoolean           Boolean
 
 " Comments; their contents

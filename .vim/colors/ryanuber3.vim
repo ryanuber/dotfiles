@@ -35,7 +35,7 @@ hi PreProc		ctermfg=108		cterm=none
 hi Function		ctermfg=249		cterm=none
 hi Identifier	ctermfg=197     cterm=none
 hi Type			ctermfg=250		cterm=none
-hi Special		ctermfg=255		cterm=none
+hi Special		ctermfg=120		cterm=none
 hi String		ctermfg=250		cterm=none
 hi Comment		ctermfg=241		cterm=none
 hi Todo			ctermfg=245		cterm=none
