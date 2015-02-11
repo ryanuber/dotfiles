@@ -28,7 +28,7 @@ endif
 
 " Syntax highlighting
 hi Keyword		ctermfg=197		cterm=none
-hi Statement	ctermfg=197		cterm=none
+hi Statement	ctermfg=203		cterm=none
 hi Constant		ctermfg=120		cterm=none
 hi Number		ctermfg=255		cterm=none
 hi PreProc		ctermfg=108		cterm=none

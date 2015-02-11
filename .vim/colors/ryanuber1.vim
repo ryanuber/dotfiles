@@ -48,7 +48,8 @@ hi Statement	ctermfg=216		cterm=none		guifg=#8ac6f2	gui=none
 hi Constant		ctermfg=209		cterm=none		guifg=#e5786d	gui=none
 hi Number		ctermfg=222		cterm=none		guifg=#e5786d	gui=none
 hi PreProc		ctermfg=186		cterm=none		guifg=#e5786d	gui=none
-hi Function		ctermfg=203		cterm=none		guifg=#cae682	gui=none
+hi Function		ctermfg=250		cterm=none		guifg=#cae682	gui=none
+hi Operator		ctermfg=255		cterm=none		guifg=#cae682	gui=none
 hi Identifier	ctermfg=180		cterm=none		guifg=#cae682	gui=none
 hi Type			ctermfg=229		cterm=none		guifg=#cae682	gui=none
 hi Special		ctermfg=194		cterm=none		guifg=#e7f6da	gui=none
