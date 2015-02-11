@@ -79,7 +79,7 @@ syn keyword     goDeclType          struct interface
 
 hi def link     goDirective         Statement
 hi def link     goDeclaration       Keyword
-hi def link     goDeclType          Keyword
+hi def link     goDeclType          Number
 
 " Keywords within functions
 syn keyword     goStatement         defer go goto return break continue fallthrough
@@ -115,7 +115,7 @@ syn keyword     goBuiltins          append cap close complex copy delete imag le
 syn keyword     goBuiltins          make new panic print println real recover
 syn keyword     goBoolean           iota true false nil
 
-hi def link     goBuiltins          Keyword
+hi def link     goBuiltins          Special
 hi def link     goBoolean           Boolean
 
 " Comments; their contents
@@ -258,7 +258,7 @@ if g:go_highlight_functions != 0
 	syn match goFunction							/\(func\s\+\)\@<=\w\+\((\)\@=/
 	syn match goFunction							/\()\s\+\)\@<=\w\+\((\)\@=/
 endif
-hi def link     goFunction					Function
+hi def link     goFunction					Identifier
 
 " Methods; 
 if g:go_highlight_methods != 0
@@ -271,8 +271,8 @@ if g:go_highlight_structs != 0
 	syn match goStruct								/\(.\)\@<=\w\+\({\)\@=/
 	syn match goStructDef							/\(type\s\+\)\@<=\w\+\(\s\+struct\s\+{\)\@=/
 endif
-hi def link     goStruct						Function
-hi def link     goStructDef         Function
+hi def link     goStruct						Number
+hi def link     goStructDef         Type
 
 " Build Constraints
 if g:go_highlight_build_constraints != 0

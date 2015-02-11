@@ -17,7 +17,7 @@ set nolist
 filetype plugin on
 
 " Colors
-colorscheme ryanuber2
+colorscheme ryanuber3
 
 " Line highlighting options (may cause performance issues)
 set cursorline
