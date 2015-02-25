@@ -12,6 +12,7 @@ set nu
 set nosi
 set noai
 set nolist
+set dir=/tmp
 
 " Enable filetype detection
 filetype plugin on
