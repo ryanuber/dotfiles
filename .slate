@@ -12,7 +12,11 @@ layout 1 'Mail':REPEAT               ${lefthalf}   0
 layout 1 'Google Chrome':REPEAT      ${lefthalf}   0
 layout 1 'Slack':REPEAT              ${upperright} 0
 layout 1 'Textual IRC Client':REPEAT ${lowerright} 0
+
 layout 2 'Terminal':MAIN_FIRST       ${righthalf} | ${upperleft} | ${lowerleft}  0
+
+layout 3 'Slack':REPEAT              ${lefthalf}  1
+layout 3 'Textual IRC Client':REPEAT ${righthalf} 1
 
 # Hyper key
 alias hyper ctrl;shift;alt;cmd
@@ -26,6 +30,7 @@ bind j:${hyper} ${lowerleft}
 bind k:${hyper} ${lowerright}
 bind 1:${hyper} layout 1
 bind 2:${hyper} layout 2
+bind 3:${hyper} layout 3
 
 # Focus Bindings
 bind d:${hyper} focus right
