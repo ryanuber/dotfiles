@@ -93,7 +93,16 @@ au FileType html setl ts=2 sts=2 sw=2
 " Go files
 au FileType go setl nosmarttab noexpandtab
 au FileType go setl ts=4 sts=4 sw=4
-au FileType go :au BufWritePre * :Fmt
+let g:go_highlight_operators=1
+let g:go_highlight_methods=1
+let g:go_highlight_structs = 1
+let g:go_highlight_trailing_whitespace_error = 0
+let g:go_highlight_space_tab_error = 0
+let g:go_highlight_chan_whitespace_error = 0
+let g:go_highlight_array_whitespace_error = 0
 
 " Disable comment continuation *AFTER* defaults from autocmd are collected
 au FileType * setl fo-=cro
+
+" Enable pathogen
+execute pathogen#infect()
