@@ -1,3 +1,6 @@
+" Enable pathogen
+execute pathogen#infect()
+
 " These will be applied to all unknown extensions and every known file
 " extension unless overridden later on
 syn on
@@ -20,6 +23,10 @@ filetype plugin on
 " Colors
 colorscheme ryanuber3
 
+" Disable left/right scrollbars in GUI
+set go-=L
+set go-=r
+
 " Line highlighting options (may cause performance issues)
 set cursorline
 
@@ -35,9 +42,8 @@ endif
 " Mark indentation
 set listchars=tab:·\ 
 
-" This will highlight characters beyond the 80th column
-hi toolong ctermbg=52
-match toolong /\%81v.\+/
+" Alternate background for columns past 80 wide
+let &colorcolumn=join(range(81,999),",")
 
 " Highlight trailing whitespace.
 " I would normally just have vim remove it but this can be problmatic when
@@ -94,15 +100,12 @@ au FileType html setl ts=2 sts=2 sw=2
 au FileType go setl nosmarttab noexpandtab
 au FileType go setl ts=4 sts=4 sw=4
 let g:go_highlight_operators=1
-let g:go_highlight_methods=1
-let g:go_highlight_structs = 1
-let g:go_highlight_trailing_whitespace_error = 0
-let g:go_highlight_space_tab_error = 0
-let g:go_highlight_chan_whitespace_error = 0
-let g:go_highlight_array_whitespace_error = 0
+let g:go_highlight_methods=0
+let g:go_highlight_structs=0
+let g:go_highlight_trailing_whitespace_error=0
+let g:go_highlight_space_tab_error=0
+let g:go_highlight_chan_whitespace_error=0
+let g:go_highlight_array_whitespace_error=0
 
 " Disable comment continuation *AFTER* defaults from autocmd are collected
 au FileType * setl fo-=cro
-
-" Enable pathogen
-execute pathogen#infect()

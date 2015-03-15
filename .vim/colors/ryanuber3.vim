@@ -8,6 +8,7 @@ let colors_name = "ryanuber1"
 " General colors
 hi Normal		ctermfg=254		ctermbg=234		cterm=none
 hi Cursor		ctermfg=none	ctermbg=241		cterm=none
+hi ColorColumn                  ctermbg=235     cterm=none
 hi Visual		ctermfg=7		ctermbg=238		cterm=none
 hi Folded		ctermfg=103		ctermbg=238		cterm=none
 hi Title		ctermfg=7		ctermbg=none	cterm=bold
