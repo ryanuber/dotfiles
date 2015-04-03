@@ -42,8 +42,9 @@ endif
 " Mark indentation
 set listchars=tab:·\ 
 
-" Alternate background for columns past 80 wide
-let &colorcolumn=join(range(81,999),",")
+" This will highlight characters beyond the 80th column
+hi toolong ctermbg=52
+match toolong /\%81v.\+/
 
 " Highlight trailing whitespace.
 " I would normally just have vim remove it but this can be problmatic when
