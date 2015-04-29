@@ -110,3 +110,14 @@ let g:go_highlight_array_whitespace_error=0
 
 " Disable comment continuation *AFTER* defaults from autocmd are collected
 au FileType * setl fo-=cro
+
+" vim-airline
+set laststatus=2
+let g:airline_powerline_fonts=1
+let g:airline_theme="ryanuber"
+
+" Use silver searcher instead of grep
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
