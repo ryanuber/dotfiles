@@ -3,6 +3,7 @@
 FILES=(
     .gitprompt
     .screenrc
+    .shellenv
     .ssh/config
     .vimrc
     .vim
