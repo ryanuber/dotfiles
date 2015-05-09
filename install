@@ -1,0 +1,29 @@
+#!/bin/bash
+
+FILES=(
+    .gitprompt
+    .screenrc
+    .ssh/config
+    .vimrc
+    .vim
+)
+
+function link() {
+    while [[ $# -gt 0 ]]; do
+        LINK=$HOME/$1
+        TARGET=$PWD/$1
+        shift
+        if [[ ! -d $(dirname $LINK) ]]; then
+            mkdir -p $(dirname $LINK)
+        fi
+        if [[ -L $LINK ]]; then
+            echo "==> update $LINK"
+            unlink $LINK
+        else
+            echo "==> create $LINK"
+        fi
+        ln -s $TARGET $LINK
+    done
+}
+
+link ${FILES[@]}
