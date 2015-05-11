@@ -1,0 +1,7 @@
+# These need to be configured in Terminal prefs:
+# Home: \033[7~
+# End:  \033[4~
+# PgUp: \033[5~
+# PgDn: \033[6~
+"\e[7~": beginning-of-line
+"\e[4~": end-of-line

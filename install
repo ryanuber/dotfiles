@@ -2,6 +2,7 @@
 
 FILES=(
     .gitprompt
+    .inputrc
     .screenrc
     .shellenv
     .ssh/config
