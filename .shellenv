@@ -10,4 +10,5 @@ alias ag='ag --color-match "38;5;222" --color-line-number "38;5;240" --color-pat
 # Golang
 export GOROOT=$HOME/.goroot/go
 export GOPATH=$HOME/go
+export GOMAXPROCS=$(sysctl -n hw.ncpu)
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
