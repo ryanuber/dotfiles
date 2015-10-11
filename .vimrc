@@ -21,7 +21,7 @@ set dir=/tmp
 filetype plugin on
 
 " Colors
-colorscheme ryanuber3
+colorscheme wombat256
 
 " Disable left/right scrollbars in GUI
 set go-=L
@@ -107,6 +107,9 @@ let g:go_highlight_trailing_whitespace_error=0
 let g:go_highlight_space_tab_error=0
 let g:go_highlight_chan_whitespace_error=0
 let g:go_highlight_array_whitespace_error=0
+
+" Terraform files
+au BufRead,BufNewFile *.tf setl ts=2 sts=2 sw=2
 
 " Disable comment continuation *AFTER* defaults from autocmd are collected
 au FileType * setl fo-=cro
