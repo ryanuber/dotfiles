@@ -6,8 +6,7 @@ FILES=(
     .screenrc
     .shellenv
     .ssh/config
-    .vimrc
-    .vim
+    .config/nvim
 )
 
 function link() {
