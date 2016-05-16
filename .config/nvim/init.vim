@@ -10,8 +10,7 @@ set sts=4
 set sw=4
 set smarttab
 set expandtab
-set ru
-set nu
+set rnu
 set nosi
 set noai
 set nolist
