@@ -10,9 +10,8 @@ set sts=4
 set sw=4
 set smarttab
 set expandtab
-set rnu
+set nu
 set nosi
-set noai
 set nolist
 set dir=/tmp
 
@@ -20,7 +19,7 @@ set dir=/tmp
 filetype plugin on
 
 " Colors
-colorscheme wombat256
+colorscheme predrawn
 
 " Disable left/right scrollbars in GUI
 set go-=L
@@ -44,6 +43,10 @@ set listchars=tab:·\
 " This will highlight characters beyond the 80th column
 hi toolong ctermbg=52
 match toolong /\%81v.\+/
+
+" Draws a line at the 80-character boundary
+"set colorcolumn=80
+"hi ColorColumn ctermbg=darkgrey
 
 " Highlight trailing whitespace.
 " I would normally just have vim remove it but this can be problmatic when
