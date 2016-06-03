@@ -19,7 +19,7 @@ set dir=/tmp
 filetype plugin on
 
 " Colors
-colorscheme predrawn
+colorscheme predawn
 
 " Disable left/right scrollbars in GUI
 set go-=L
