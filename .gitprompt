@@ -514,7 +514,7 @@ __git_ps1 ()
 }
 
 GIT_PS1_SHOWCOLORHINTS=1
-PROMPT_COMMAND='__git_ps1 "\[\033[38;5;252m\]\W\[\033[0m\]" " \[\033[38;5;48m\]»\[\033[0m\] " " %s"'
+PROMPT_COMMAND='__git_ps1 "\[\033[38;5;252m\]\W\[\033[0m\]" " \[\033[38;5;86m\]»\[\033[0m\] " " %s"'
 
 # From the default /etc/bashrc on OSX. This fixes Terminal's memory of the
 # working directory so we can hop back to it on new tabs.
