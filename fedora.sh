@@ -94,6 +94,25 @@ gsettings set $SCHEMA foreground-color 'rgb(255,255,255)'
 gsettings set $SCHEMA scrollback-unlimited true
 gsettings set $SCHEMA use-system-font false
 gsettings set $SCHEMA font 'DejaVu Sans Mono for Powerline 11'
+gsettings set $SCHEMA palette "
+[
+    'rgb(85,87,83)',
+    'rgb(239,41,41)',
+    'rgb(138,226,52)',
+    'rgb(252,233,79)',
+    'rgb(114,159,207)',
+    'rgb(173,127,168)',
+    'rgb(52,226,226)',
+    'rgb(211,215,207)',
+    'rgb(85,87,83)',
+    'rgb(239,41,41)',
+    'rgb(138,226,52)',
+    'rgb(252,233,79)',
+    'rgb(114,159,207)',
+    'rgb(173,127,168)',
+    'rgb(52,226,226)',
+    'rgb(238,238,236)'
+]"
 
 # Configure the desktop environment.
 WALLPAPER_FILE=$HOME/Pictures/$(basename $WALLPAPER_URL)
