@@ -12,7 +12,9 @@ PUBKEYS=(
 INSTALL_PACKAGES=(
     chromium
     git
+    jq
     neovim
+    the_silver_searcher
     tlp
     transmission
     https://downloads.slack-edge.com/linux_releases/slack-2.3.4-0.1.fc21.x86_64.rpm
