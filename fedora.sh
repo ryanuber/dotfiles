@@ -13,7 +13,9 @@ INSTALL_PACKAGES=(
     chromium
     git
     jq
+    libsecret-devel
     neovim
+    readline-devel
     the_silver_searcher
     tlp
     transmission
@@ -149,3 +151,11 @@ cat <<EOF | sudo tee /etc/gdm/custom.conf
 AutomaticLoginEnable=True
 AutomaticLogin=$USER
 EOF
+
+# Install envchain.
+mkdir -p ~/git
+git clone https://github.com/sorah/envchain ~/git/envchain
+pushd ~/git/envchain
+make
+make DESTDIR=$HOME install
+popd
