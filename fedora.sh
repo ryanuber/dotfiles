@@ -141,3 +141,11 @@ EOF
 # Configure GRUB boot loader.
 sudo sed -i 's|GRUB_TIMEOUT=.*|GRUB_TIMEOUT=1|' /etc/default/grub
 sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+
+# Set automatic login. Assumes disk encryption requires a pw, otherwise
+# this would be a terrible idea.
+cat <<EOF | sudo tee /etc/gdm/custom.conf
+[daemon]
+AutomaticLoginEnable=True
+AutomaticLogin=$USER
+EOF
