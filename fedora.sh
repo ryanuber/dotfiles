@@ -138,6 +138,10 @@ sqlite3 ~/.zoom/data/zoomus.db <<EOF
 UPDATE zoom_kv
 SET value = 338432272
 WHERE key == "com.zoom.pt.settings.general";
+
+UPDATE zoom_kv
+SET value = false
+WHERE key == "com.zoom.agc";
 EOF
 
 # Configure GRUB boot loader.
