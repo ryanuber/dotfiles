@@ -163,3 +163,6 @@ pushd ~/git/envchain
 make
 make DESTDIR=$HOME install
 popd
+
+# Disable the touchscreen completely.
+echo "blacklist hid_multitouch" | sudo tee /etc/modprobe.d/hid_multitouch.conf
