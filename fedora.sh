@@ -21,7 +21,6 @@ INSTALL_PACKAGES=(
     transmission
     https://downloads.slack-edge.com/linux_releases/slack-2.3.4-0.1.fc21.x86_64.rpm
     https://zoom.us/client/latest/zoom_x86_64.rpm
-    https://fpdownload.adobe.com/pub/flashplayer/pdc/24.0.0.186/flash-player-ppapi-24.0.0.186-release.x86_64.rpm
 )
 
 REMOVE_PACKAGES=(
@@ -164,7 +163,3 @@ pushd ~/git/envchain
 make
 make DESTDIR=$HOME install
 popd
-
-# Configure the peppered flash plugin for chromium.
-sudo ln -s /usr/lib/adobe-flashplugin/libpepflashplayer.so /usr/lib64/chromium-browser/PepperFlash/
-sudo ln -s /usr/lib/adobe-flashplugin/manifest.json /usr/lib64/chromium-browser/PepperFlash/
