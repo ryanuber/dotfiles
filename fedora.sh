@@ -125,6 +125,9 @@ WALLPAPER_FILE=$HOME/Pictures/$(basename $WALLPAPER_URL)
 curl -o $WALLPAPER_FILE -L $WALLPAPER_URL
 gsettings set org.gnome.desktop.background picture-uri "file://$WALLPAPER_FILE"
 gsettings set org.gnome.desktop.screensaver picture-uri "file://$WALLPAPER_FILE"
+gsettings set org.gnome.desktop.interface clock-format '12h'
+SCHEMA=org.gnome.desktop.notifications.application:/org/gnome/desktop/notifications/application
+gsettings set $SCHEMA/abrt-applet/ enable false
 
 # Set the user profile details.
 sudo curl -o /var/lib/AccountsService/icons/$USER -L $AVATAR_URL
