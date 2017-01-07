@@ -11,8 +11,3 @@ export LS_COLORS='di=38;5;75:ln=38;5;170:ex=38;5;47:st=48;5;57;38;5;75:tw=48;5;5
 
 # Silver Searcher colors
 alias ag='ag --color-match "38;5;222" --color-line-number "38;5;240" --color-path "38;5;47"'
-
-# Golang
-export GOROOT=$HOME/.goroot/go
-export GOPATH=$HOME/go
-export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
