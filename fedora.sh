@@ -114,7 +114,7 @@ for PROFILE in $DEFAULT_PROFILE $MONITOR_PROFILE; do
     gsettings set $SCHEMA font "DejaVu Sans Mono for Powerline $FONT_SIZE"
     gsettings set $SCHEMA default-size-columns 90
     gsettings set $SCHEMA default-size-rows 40
-    gsettings set $SCHEMA palette $(cat <<-EOF
+    gsettings set $SCHEMA palette "
     [
         'rgb(85,87,83)',
         'rgb(239,41,41)',
@@ -132,8 +132,7 @@ for PROFILE in $DEFAULT_PROFILE $MONITOR_PROFILE; do
         'rgb(173,127,168)',
         'rgb(52,226,226)',
         'rgb(238,238,236)'
-    ]
-    EOF)
+    ]"
 done
 
 # Configure the desktop environment.
@@ -155,11 +154,11 @@ sleep 3
 killall zoom
 sqlite3 ~/.zoom/data/zoomus.db <<EOF
 UPDATE zoom_kv
-SET value = 338432272
+SET value = "338432272"
 WHERE key == "com.zoom.pt.settings.general";
 
 UPDATE zoom_kv
-SET value = false
+SET value = "false"
 WHERE key == "com.zoom.agc";
 EOF
 
