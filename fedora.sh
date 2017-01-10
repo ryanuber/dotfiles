@@ -89,36 +89,52 @@ gsettings set $SCHEMA next-tab '<Primary>Right'
 gsettings set $SCHEMA new-tab '<Primary>t'
 gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
 
-# Set up the terminal profile
-eval PROFILE=:$(gsettings get org.gnome.Terminal.ProfilesList default)
-SCHEMA=org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/$PROFILE/
-gsettings set $SCHEMA visible-name $USER
-gsettings set $SCHEMA use-theme-colors false
-gsettings set $SCHEMA foreground-color 'rgb(255,255,255)'
-gsettings set $SCHEMA scrollback-unlimited true
-gsettings set $SCHEMA use-system-font false
-gsettings set $SCHEMA font 'DejaVu Sans Mono for Powerline 10'
-gsettings set $SCHEMA default-size-columns 90
-gsettings set $SCHEMA default-size-rows 40
-gsettings set $SCHEMA palette "
-[
-    'rgb(85,87,83)',
-    'rgb(239,41,41)',
-    'rgb(138,226,52)',
-    'rgb(252,233,79)',
-    'rgb(114,159,207)',
-    'rgb(173,127,168)',
-    'rgb(52,226,226)',
-    'rgb(211,215,207)',
-    'rgb(85,87,83)',
-    'rgb(239,41,41)',
-    'rgb(138,226,52)',
-    'rgb(252,233,79)',
-    'rgb(114,159,207)',
-    'rgb(173,127,168)',
-    'rgb(52,226,226)',
-    'rgb(238,238,236)'
-]"
+# Set up the terminal profiles
+eval DEFAULT_PROFILE=$(gsettings get org.gnome.Terminal.ProfilesList default)
+MONITOR_PROFILE=$(uuidgen)
+
+gsettings set org.gnome.Terminal.ProfilesList list "['$DEFAULT_PROFILE','$MONITOR_PROFILE']"
+
+for PROFILE in $DEFAULT_PROFILE $MONITOR_PROFILE; do
+    SCHEMA=org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE/
+
+    if [ $PROFILE == $MONITOR_PROFILE ]; then
+        FONT_SIZE=11
+        PROFILE_NAME=monitor
+    else
+        FONT_SIZE=10
+        PROFILE_NAME=$USER
+    fi
+
+    gsettings set $SCHEMA visible-name $PROFILE_NAME
+    gsettings set $SCHEMA use-theme-colors false
+    gsettings set $SCHEMA foreground-color 'rgb(255,255,255)'
+    gsettings set $SCHEMA scrollback-unlimited true
+    gsettings set $SCHEMA use-system-font false
+    gsettings set $SCHEMA font "DejaVu Sans Mono for Powerline $FONT_SIZE"
+    gsettings set $SCHEMA default-size-columns 90
+    gsettings set $SCHEMA default-size-rows 40
+    gsettings set $SCHEMA palette $(cat <<-EOF
+    [
+        'rgb(85,87,83)',
+        'rgb(239,41,41)',
+        'rgb(138,226,52)',
+        'rgb(252,233,79)',
+        'rgb(114,159,207)',
+        'rgb(173,127,168)',
+        'rgb(52,226,226)',
+        'rgb(211,215,207)',
+        'rgb(85,87,83)',
+        'rgb(239,41,41)',
+        'rgb(138,226,52)',
+        'rgb(252,233,79)',
+        'rgb(114,159,207)',
+        'rgb(173,127,168)',
+        'rgb(52,226,226)',
+        'rgb(238,238,236)'
+    ]
+    EOF)
+done
 
 # Configure the desktop environment.
 WALLPAPER_FILE=$HOME/Pictures/$(basename $WALLPAPER_URL)
