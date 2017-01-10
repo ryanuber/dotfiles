@@ -43,14 +43,14 @@ for PUBKEY_URL in ${PUBKEYS[@]}; do
     sudo rpm --import $PUBKEY_URL
 done
 
+# Purge unnecessary software packages.
+sudo dnf remove -y ${REMOVE_PACKAGES[@]} || :
+
 # Update all packages installed by default.
 sudo dnf update -y
 
 # Install software packages.
 sudo dnf install -y ${INSTALL_PACKAGES[@]}
-
-# Purge unnecessary software packages.
-sudo dnf remove -y ${REMOVE_PACKAGES[@]} || :
 
 # Disable unused services.
 for SERVICE in ${DISABLE_SERVICES[@]}; do
