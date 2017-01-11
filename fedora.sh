@@ -147,7 +147,8 @@ gsettings set $SCHEMA/abrt-applet/ enable false
 
 # Set the user profile details.
 sudo curl -o /var/lib/AccountsService/icons/$USER -L $AVATAR_URL
-sudo sed -i "s|^Icon=.*|Icon=/var/lib/AccountsService/icons/$USER|" /var/lib/AccountsService/users/$USER
+sudo sed -i "/^Icon=.*/d" /var/lib/AccountsService/users/$USER
+echo "Icon=/var/lib/AccountsService/icons/$USER" | sudo tee -a /var/lib/AccountsService/users/$USER
 
 # Configure zoom client.
 zoom &
