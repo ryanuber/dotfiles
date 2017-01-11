@@ -16,6 +16,7 @@ INSTALL_PACKAGES=(
     libsecret-devel
     neovim
     readline-devel
+    simple-scan
     the_silver_searcher
     tlp
     transmission
