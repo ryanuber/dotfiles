@@ -516,17 +516,15 @@ __git_ps1 ()
 GIT_PS1_SHOWCOLORHINTS=1
 PROMPT_COMMAND='__git_ps1 "\[\033[38;5;252m\]\W\[\033[0m\]" " \[\033[38;5;86m\]»\[\033[0m\] " " %s"'
 
-# From the default /etc/bashrc on OSX. This fixes Terminal's memory of the
-# working directory so we can hop back to it on new tabs.
-if [ "$TERM_PROGRAM" == "Apple_Terminal" ] && [ -z "$INSIDE_EMACS" ]; then
-    update_terminal_cwd() {
-        # Identify the directory using a "file:" scheme URL,
-        # including the host name to disambiguate local vs.
-        # remote connections. Percent-escape spaces.
-        local SEARCH=' '
-        local REPLACE='%20'
-        local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
-        printf '\e]7;%s\a' "$PWD_URL"
-    }
-    PROMPT_COMMAND="update_terminal_cwd; $PROMPT_COMMAND"
-fi
+# Fix the terminal's memory of the working directory so we can hop back to it
+# on new tabs.
+update_terminal_cwd() {
+    # Identify the directory using a "file:" scheme URL,
+    # including the host name to disambiguate local vs.
+    # remote connections. Percent-escape spaces.
+    local SEARCH=' '
+    local REPLACE='%20'
+    local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
+    printf '\e]7;%s\a' "$PWD_URL"
+}
+PROMPT_COMMAND="update_terminal_cwd; $PROMPT_COMMAND"
