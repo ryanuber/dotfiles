@@ -29,6 +29,10 @@ REMOVE_PACKAGES=(
     firefox
 )
 
+PIP_PACKAGES=(
+    awslogs
+)
+
 DISABLE_SERVICES=(
     atd
     avahi-daemon
@@ -68,6 +72,11 @@ export GOROOT=\$HOME/.goroot/go
 export GOPATH=\$HOME/go
 export PATH=\$GOROOT/bin:\$GOPATH/bin:\$PATH
 EOF
+
+# Install pip packages
+for PKG in ${PIP_PACKAGES[@]}; do
+    pip install --user $PKG
+done
 
 # Set up powerline font for neovim
 mkdir -p ~/.local/share/fonts
