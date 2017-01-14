@@ -1,7 +1,7 @@
 source ~/.gitprompt
 
 # Add local bin
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
 if [ `uname -s` == "Darwin" ]; then
     alias ls='gls --color=auto'
