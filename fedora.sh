@@ -12,8 +12,10 @@ PUBKEYS=(
 INSTALL_PACKAGES=(
     chromium
     git
+    gstreamer1-plugin-mpg123
     jq
     libsecret-devel
+    mpg123-libs
     neovim
     readline-devel
     simple-scan
@@ -192,3 +194,8 @@ pushd ~/git/envchain
 make
 make DESTDIR=$HOME install
 popd
+
+# Install the flash plugin.
+FLASH_PLUGIN_URL=https://fpdownload.adobe.com/pub/flashplayer/pdc/24.0.0.194/flash_player_ppapi_linux.x86_64.tar.gz
+curl -L $FLASH_PLUGIN_URL \
+    | sudo tar -C /usr/lib64/chromium-browser/PepperFlash -zxvf -
