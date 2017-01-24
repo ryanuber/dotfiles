@@ -168,7 +168,7 @@ sleep 3
 killall zoom
 sqlite3 ~/.zoom/data/zoomus.db <<EOF
 UPDATE zoom_kv
-SET value = "338432272"
+SET value = "338432784"
 WHERE key == "com.zoom.pt.settings.general";
 
 UPDATE zoom_kv
