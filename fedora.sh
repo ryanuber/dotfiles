@@ -11,6 +11,7 @@ PUBKEYS=(
 
 INSTALL_PACKAGES=(
     chromium
+    gnome-shell-extension-openweather
     git
     gstreamer1-plugin-mpg123
     jq
@@ -199,3 +200,12 @@ popd
 FLASH_PLUGIN_URL=https://fpdownload.adobe.com/pub/flashplayer/pdc/24.0.0.194/flash_player_ppapi_linux.x86_64.tar.gz
 curl -L $FLASH_PLUGIN_URL \
     | sudo tar -C /usr/lib64/chromium-browser/PepperFlash -zxvf -
+
+# Configure the gnome weather shell extension
+SCHEMA=org.gnome.shell.extensions.openweather
+gsettings set $SCHEMA unit fahrenheit
+gsettings set $SCHEMA wind-speed-unit mph
+gsettings set $SCHEMA pressure-unit psi
+gsettings set $SCHEMA refresh-interval-current 600
+gsettings set $SCHEMA refresh-interval-forecast 3600
+gsettings set $SCHEMA city '33.1968352521268,-117.285215120784>Oceanside, San Diego County, California, 92056, United States of America >-1'
