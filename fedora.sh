@@ -19,6 +19,7 @@ INSTALL_PACKAGES=(
     mpg123-libs
     neovim
     readline-devel
+    redis
     ruby
     rubygem-bundler
     simple-scan
