@@ -21,7 +21,6 @@ INSTALL_PACKAGES=(
     readline-devel
     redis
     ruby
-    rubygem-bundler
     simple-scan
     the_silver_searcher
     tlp
