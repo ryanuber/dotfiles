@@ -19,6 +19,8 @@ INSTALL_PACKAGES=(
     mpg123-libs
     neovim
     readline-devel
+    ruby
+    rubygem-bundler
     simple-scan
     the_silver_searcher
     tlp
