@@ -204,8 +204,14 @@ make DESTDIR=$HOME install
 popd
 
 # Install chruby.
-curl -o $HOME/bin/chruby https://raw.githubusercontent.com/postmodern/chruby/master/share/chruby/chruby.sh
-chmod +x $HOME/bin/chruby
+git clone https://github.com/postmodern/chruby ~/git/chruby
+pushd ~/git/chruby
+make PREFIX=$HOME/.local install
+popd
+cat >> ~/.bashrc <<EOF
+# Source chruby helper
+. ~/.local/share/chruby/chruby.sh
+EOF
 
 # Install ruby-installer.
 git clone https://github.com/postmodern/ruby-install ~/git/ruby-install
