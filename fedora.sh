@@ -24,6 +24,7 @@ INSTALL_PACKAGES=(
     the_silver_searcher
     tlp
     transmission
+    uuid
     https://downloads.slack-edge.com/linux_releases/slack-2.3.4-0.1.fc21.x86_64.rpm
     https://zoom.us/client/latest/zoom_x86_64.rpm
 )
