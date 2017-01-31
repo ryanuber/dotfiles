@@ -20,7 +20,6 @@ INSTALL_PACKAGES=(
     neovim
     readline-devel
     redis
-    ruby
     simple-scan
     the_silver_searcher
     tlp
@@ -202,6 +201,16 @@ git clone https://github.com/sorah/envchain ~/git/envchain
 pushd ~/git/envchain
 make
 make DESTDIR=$HOME install
+popd
+
+# Install chruby.
+curl -o $HOME/bin/chruby https://raw.githubusercontent.com/postmodern/chruby/master/share/chruby/chruby.sh
+chmod +x $HOME/bin/chruby
+
+# Install ruby-installer.
+git clone https://github.com/postmodern/ruby-install ~/git/ruby-install
+pushd ~/git/ruby-install
+make PREFIX=$HOME/.local install
 popd
 
 # Install the flash plugin.
