@@ -28,6 +28,10 @@ INSTALL_PACKAGES=(
     https://zoom.us/client/latest/zoom_x86_64.rpm
 )
 
+INSTALL_GROUPS=(
+    "C Development Tools and Libraries"
+)
+
 REMOVE_PACKAGES=(
     PackageKit-command-not-found
     firefox
@@ -60,6 +64,7 @@ sudo dnf update -y
 
 # Install software packages.
 sudo dnf install -y ${INSTALL_PACKAGES[@]}
+sudo dnf groupinstall -y ${INSTALL_GROUPS[@]}
 
 # Disable unused services.
 for SERVICE in ${DISABLE_SERVICES[@]}; do
