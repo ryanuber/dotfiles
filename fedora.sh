@@ -25,6 +25,7 @@ INSTALL_PACKAGES=(
     tlp
     transmission
     uuid
+    https://releases.hashicorp.com/vagrant/1.9.1/vagrant_1.9.1_x86_64.rpm
     https://downloads.slack-edge.com/linux_releases/slack-2.3.4-0.1.fc21.x86_64.rpm
     https://zoom.us/client/latest/zoom_x86_64.rpm
 )
@@ -240,3 +241,6 @@ gsettings set $SCHEMA refresh-interval-forecast 3600
 gsettings set $SCHEMA appid-fc 2191ed80fb23838ebede43bc19580b7f
 gsettings set $SCHEMA weather-provider darksky.net
 gsettings set $SCHEMA city '33.1968352521268,-117.285215120784>Oceanside, San Diego County, California, 92056, United States of America >-1'
+
+# Disable selinux. It's not ready for the desktop.
+sudo sed -i s/SELINUX=.*/SELINUX=disabled/g /etc/selinux/config
