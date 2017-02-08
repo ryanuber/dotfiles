@@ -9,11 +9,18 @@ PUBKEYS=(
     https://zoom.us/linux/download/pubkey
 )
 
+EXTERNAL_REPO_RPMS=(
+    https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-25.noarch.rpm
+)
+
 INSTALL_PACKAGES=(
     chromium
     gnome-shell-extension-openweather
     git
+    gstreamer1-libav
     gstreamer1-plugin-mpg123
+    gstreamer1-plugin-openh264
+    gstreamer1-plugins-bad-freeworld
     jq
     libsecret-devel
     mpg123-libs
@@ -60,6 +67,9 @@ done
 
 # Purge unnecessary software packages.
 sudo dnf remove -y ${REMOVE_PACKAGES[@]} || :
+
+# Install external repos
+sudo dnf install ${EXTERNAL_REPO_RPMS[@]}
 
 # Update all packages installed by default.
 sudo dnf update -y
@@ -244,3 +254,6 @@ gsettings set $SCHEMA city '33.1968352521268,-117.285215120784>Oceanside, San Di
 
 # Disable selinux. It's not ready for the desktop.
 sudo sed -i s/SELINUX=.*/SELINUX=disabled/g /etc/selinux/config
+
+# Audio bridge auto-poweroff on battery.
+sudo sed -i s/^SOUND_POWER_SAVE_ON_BAT=.*/SOUND_POWER_ON_BAT=300/g /etc/default/tlp
