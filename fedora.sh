@@ -25,6 +25,7 @@ INSTALL_PACKAGES=(
     libsecret-devel
     mpg123-libs
     neovim
+    powertop
     readline-devel
     redis
     simple-scan
