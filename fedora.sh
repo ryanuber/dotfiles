@@ -11,6 +11,7 @@ PUBKEYS=(
 
 EXTERNAL_REPO_RPMS=(
     https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-25.noarch.rpm
+    https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-25.noarch.rpm
 )
 
 INSTALL_PACKAGES=(
@@ -70,7 +71,10 @@ done
 sudo dnf remove -y ${REMOVE_PACKAGES[@]} || :
 
 # Install external repos
-sudo dnf install ${EXTERNAL_REPO_RPMS[@]}
+sudo dnf install -y ${EXTERNAL_REPO_RPMS[@]}
+
+# Enable Cisco openh264 repo
+sudo dnf config-manager --set-enabled fedora-cisco-openh264
 
 # Update all packages installed by default.
 sudo dnf update -y
