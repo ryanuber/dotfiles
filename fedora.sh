@@ -77,7 +77,9 @@ sudo dnf update -y
 
 # Install software packages.
 sudo dnf install -y ${INSTALL_PACKAGES[@]}
-sudo dnf groupinstall -y ${INSTALL_GROUPS[@]}
+for GROUP in "${INSTALL_GROUPS[@]}"; do
+    sudo dnf groupinstall -y "${GROUP}"
+done
 
 # Disable unused services.
 for SERVICE in ${DISABLE_SERVICES[@]}; do
