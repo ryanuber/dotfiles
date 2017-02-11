@@ -260,6 +260,13 @@ gsettings set $SCHEMA weather-provider darksky.net
 gsettings set $SCHEMA city '33.1968352521268,-117.285215120784>Oceanside, San Diego County, California, 92056, United States of America >-1'
 gnome-shell-extensions-tool -e openweather-extension@jenslody.de
 
+# Install/configure topicons plus
+git clone https://github.com/phocean/TopIcons-plus ~/git/TopIcons-plus
+pushd ~/git/TopIcons-plus
+gnome-shell-extension-tool -e TopIcons@phocean.net
+popd
+
+
 # Disable selinux. It's not ready for the desktop.
 sudo sed -i s/SELINUX=.*/SELINUX=disabled/g /etc/selinux/config
 
