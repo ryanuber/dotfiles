@@ -29,6 +29,7 @@ INSTALL_PACKAGES=(
     powertop
     readline-devel
     redis
+    shutter
     simple-scan
     the_silver_searcher
     tlp
@@ -272,3 +273,11 @@ sudo sed -i s/SELINUX=.*/SELINUX=disabled/g /etc/selinux/config
 
 # Audio bridge auto-poweroff on battery.
 sudo sed -i s/^SOUND_POWER_SAVE_ON_BAT=.*/SOUND_POWER_ON_BAT=300/g /etc/default/tlp
+
+# Configure shutter screenshots
+mkdir -p ~/.shutter
+cat > ~/.shutter/drawingtool.xml <<EOF
+<opt>
+  <drawing autoscroll="" fill_color="#00000000ffff" fill_color_alpha="0.160262660734963" font="Sans Regular 16" height="785" line_width="10" mode="60" stroke_color="#ffff00000000" stroke_color_alpha="1" width="1281" x="639" y="327" />
+</opt>
+EOF
