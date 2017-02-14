@@ -15,6 +15,7 @@ EXTERNAL_REPO_RPMS=(
 )
 
 INSTALL_PACKAGES=(
+    awscli
     chromium
     gnome-shell-extension-openweather
     git
