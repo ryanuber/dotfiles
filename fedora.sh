@@ -282,3 +282,6 @@ cat > ~/.shutter/drawingtool.xml <<EOF
   <drawing autoscroll="" fill_color="#00000000ffff" fill_color_alpha="0.160262660734963" font="Sans Regular 16" height="785" line_width="10" mode="60" stroke_color="#ffff00000000" stroke_color_alpha="1" width="1281" x="639" y="327" />
 </opt>
 EOF
+
+# Enable right-alt as compose key
+gsettings set org.gnome.desktop.input-sources xkb-options "['compose:ralt']"
