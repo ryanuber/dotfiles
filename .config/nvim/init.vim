@@ -26,8 +26,13 @@ colorscheme predawn
 set go-=L
 set go-=r
 
+" Draws a line at the 80-character boundary
+set colorcolumn=80
+hi ColorColumn ctermbg=236
+
 " Line highlighting options (may cause performance issues)
 set cursorline
+hi CursorLine ctermbg=236
 
 " Remap leader key
 let mapleader=","
@@ -46,19 +51,11 @@ endif
 " Mark indentation
 set listchars=tab:·\ 
 
-" This will highlight characters beyond the 80th column
-hi toolong ctermbg=52
-match toolong /\%81v.\+/
-
-" Draws a line at the 80-character boundary
-"set colorcolumn=80
-"hi ColorColumn ctermbg=darkgrey
-
 " Highlight trailing whitespace.
 " I would normally just have vim remove it but this can be problmatic when
 " editing large, existing codebases which haven't followed this strictly.
 hi trailws ctermbg=52
-2match trailws /\s\+\%#\@<!$/
+match trailws /\s\+\%#\@<!$/
 
 " Split settings
 set splitright
