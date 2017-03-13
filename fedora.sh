@@ -2,7 +2,7 @@
 set -xe
 
 AVATAR_URL=https://gravatar.com/avatar/c55cecc94ea228ef48787481b2355575?s=96
-WALLPAPER_URL=http://www.hdwallpapers.in/walls/amazing_milky_way-wide.jpg
+WALLPAPER_URL=https://github.com/elementary/wallpapers/raw/master/Leaves.jpg
 TERMINAL_FONT_URL=https://github.com/powerline/fonts/raw/master/DejaVuSansMono/DejaVu%20Sans%20Mono%20for%20Powerline.ttf
 
 PUBKEYS=(
@@ -16,7 +16,6 @@ EXTERNAL_REPO_RPMS=(
 
 INSTALL_PACKAGES=(
     awscli
-    chromium
     gnome-shell-extension-openweather
     git
     gstreamer1-libav
@@ -36,6 +35,7 @@ INSTALL_PACKAGES=(
     tlp
     transmission
     uuid
+    https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
     https://releases.hashicorp.com/vagrant/1.9.1/vagrant_1.9.1_x86_64.rpm
     https://downloads.slack-edge.com/linux_releases/slack-2.3.4-0.1.fc21.x86_64.rpm
     https://zoom.us/client/latest/zoom_x86_64.rpm
@@ -244,11 +244,6 @@ git clone https://github.com/postmodern/ruby-install ~/git/ruby-install
 pushd ~/git/ruby-install
 make PREFIX=$HOME/.local install
 popd
-
-# Install the flash plugin.
-FLASH_PLUGIN_URL=https://fpdownload.adobe.com/pub/flashplayer/pdc/24.0.0.194/flash_player_ppapi_linux.x86_64.tar.gz
-curl -L $FLASH_PLUGIN_URL \
-    | sudo tar -C /usr/lib64/chromium-browser/PepperFlash -zxvf -
 
 # Configure the gnome weather shell extension
 SCHEMA=org.gnome.shell.extensions.openweather
