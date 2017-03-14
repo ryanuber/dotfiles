@@ -261,6 +261,7 @@ gnome-shell-extension-tool -e openweather-extension@jenslody.de
 # Install/configure topicons plus
 git clone https://github.com/phocean/TopIcons-plus ~/git/TopIcons-plus
 pushd ~/git/TopIcons-plus
+make install
 gnome-shell-extension-tool -e TopIcons@phocean.net
 popd
 
