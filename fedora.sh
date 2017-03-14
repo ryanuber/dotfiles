@@ -62,7 +62,7 @@ DISABLE_SERVICES=(
     ModemManager
 )
 
-GOLANG_URL=https://storage.googleapis.com/golang/go1.7.5.linux-amd64.tar.gz
+GOLANG_URL=https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz
 
 # Install public keys
 for PUBKEY_URL in ${PUBKEYS[@]}; do
