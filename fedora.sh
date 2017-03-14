@@ -258,13 +258,19 @@ gsettings set $SCHEMA weather-provider darksky.net
 gsettings set $SCHEMA city '33.1968352521268,-117.285215120784>Oceanside, San Diego County, California, 92056, United States of America >-1'
 gnome-shell-extension-tool -e openweather-extension@jenslody.de
 
+# Install the glib schema dir for the local user
+mkdir -p ~/.local/share/glib-2.0/schemas
+
 # Install/configure topicons plus
 git clone https://github.com/phocean/TopIcons-plus ~/git/TopIcons-plus
 pushd ~/git/TopIcons-plus
 make install
+cp schemas/*.xml ~/.local/share/glib-2.0/schemas
 gnome-shell-extension-tool -e TopIcons@phocean.net
 popd
 
+# Compile the local gsettings schemas after all extensions are installed.
+glib-compile-schemas ~/.local/share/glib-2.0/schemas
 
 # Disable selinux. It's not ready for the desktop.
 sudo sed -i s/SELINUX=.*/SELINUX=disabled/g /etc/selinux/config
