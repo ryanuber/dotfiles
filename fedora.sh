@@ -31,6 +31,7 @@ INSTALL_PACKAGES=(
     redis
     shutter
     simple-scan
+    speedtest-cli
     the_silver_searcher
     tlp
     transmission
