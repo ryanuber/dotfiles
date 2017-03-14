@@ -150,11 +150,13 @@ for PROFILE in $DEFAULT_PROFILE $MONITOR_PROFILE; do
     gsettings set $SCHEMA visible-name $PROFILE_NAME
     gsettings set $SCHEMA use-theme-colors false
     gsettings set $SCHEMA foreground-color 'rgb(255,255,255)'
+    gsettings set $SCHEMA background-color 'rgb(25,25,25)'
     gsettings set $SCHEMA scrollback-unlimited true
     gsettings set $SCHEMA use-system-font false
     gsettings set $SCHEMA font "DejaVu Sans Mono for Powerline $FONT_SIZE"
     gsettings set $SCHEMA default-size-columns 90
     gsettings set $SCHEMA default-size-rows 40
+    gsettings set $SCHEMA background-transparency-percent 12
     gsettings set $SCHEMA palette "
     [
         'rgb(85,87,83)',
