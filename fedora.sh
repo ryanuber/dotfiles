@@ -255,7 +255,7 @@ gsettings set $SCHEMA refresh-interval-forecast 3600
 gsettings set $SCHEMA appid-fc 2191ed80fb23838ebede43bc19580b7f
 gsettings set $SCHEMA weather-provider darksky.net
 gsettings set $SCHEMA city '33.1968352521268,-117.285215120784>Oceanside, San Diego County, California, 92056, United States of America >-1'
-gnome-shell-extensions-tool -e openweather-extension@jenslody.de
+gnome-shell-extension-tool -e openweather-extension@jenslody.de
 
 # Install/configure topicons plus
 git clone https://github.com/phocean/TopIcons-plus ~/git/TopIcons-plus
