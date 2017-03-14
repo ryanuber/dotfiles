@@ -7,11 +7,16 @@ TERMINAL_FONT_URL=https://github.com/powerline/fonts/raw/master/DejaVuSansMono/D
 
 PUBKEYS=(
     https://zoom.us/linux/download/pubkey
+    https://www.virtualbox.org/download/oracle_vbox.asc
 )
 
 EXTERNAL_REPO_RPMS=(
     https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-25.noarch.rpm
     https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-25.noarch.rpm
+)
+
+EXTERNAL_REPO_FILES=(
+    http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
 )
 
 INSTALL_PACKAGES=(
@@ -36,6 +41,7 @@ INSTALL_PACKAGES=(
     tlp
     transmission
     uuid
+    VirtualBox-5.1
     https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
     https://releases.hashicorp.com/vagrant/1.9.1/vagrant_1.9.1_x86_64.rpm
     https://downloads.slack-edge.com/linux_releases/slack-2.3.4-0.1.fc21.x86_64.rpm
@@ -75,6 +81,12 @@ sudo dnf remove -y ${REMOVE_PACKAGES[@]} || :
 
 # Install external repos
 sudo dnf install -y ${EXTERNAL_REPO_RPMS[@]}
+
+pushd /etc/yum.repos.d
+for REMOTE in ${EXTERNAL_REPO_FILES[@]}; do
+    sudo curl -O ${REMOTE}
+done
+popd
 
 # Enable Cisco openh264 repo
 sudo dnf config-manager --set-enabled fedora-cisco-openh264
