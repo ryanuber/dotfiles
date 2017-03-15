@@ -42,6 +42,7 @@ INSTALL_PACKAGES=(
     transmission
     uuid
     VirtualBox-5.1
+    xsel
     https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
     https://releases.hashicorp.com/vagrant/1.9.1/vagrant_1.9.1_x86_64.rpm
     https://downloads.slack-edge.com/linux_releases/slack-2.3.4-0.1.fc21.x86_64.rpm

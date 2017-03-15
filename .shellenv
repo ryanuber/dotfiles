@@ -15,5 +15,8 @@ alias ag='ag --color-match "38;5;222" --color-line-number "38;5;240" --color-pat
 # Simple little divider for separating stuff in terminals.
 alias div='echo -en "\e[7m" && printf "%`tput cols`s" " " && echo -e "\e[27m"'
 
+# Make random passwords
+alias pw='openssl rand -base64 16 | tr -d = | tee >(xsel -bi)'
+
 # Add the local user's XDG_DATA_DIR
 export XDG_DATA_DIRS="${XDG_DATA_DIRS}:${HOME}/.local/share"
