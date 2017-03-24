@@ -280,7 +280,6 @@ mkdir -p ~/.local/share/glib-2.0/schemas
 git clone https://github.com/phocean/TopIcons-plus ~/git/TopIcons-plus
 pushd ~/git/TopIcons-plus
 make install
-cp schemas/*.xml ~/.local/share/glib-2.0/schemas
 gnome-shell-extension-tool -e TopIcons@phocean.net
 popd
 
