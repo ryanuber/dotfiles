@@ -22,6 +22,7 @@ EXTERNAL_REPO_FILES=(
 INSTALL_PACKAGES=(
     awscli
     gnome-shell-extension-openweather
+    gnome-shell-extension-user-theme
     git
     gstreamer1-libav
     gstreamer1-plugin-mpg123
@@ -282,6 +283,18 @@ pushd ~/git/TopIcons-plus
 make install
 gnome-shell-extension-tool -e TopIcons@phocean.net
 popd
+
+# Custom themes
+mkdir -p ~/.themes
+git clone https://github.com/lordadamson/Super-Flat-GNOME-theme \
+    ~/git/flat-shell-theme
+cp -Rp ~/git/flat-shell-theme/Super\ Flat* ~/.themes
+gsettings set org.gnome.shell.extensions.user-theme name "Flat Remix"
+
+mkdir -p ~/.icons
+git clone https://github.com/daniruiz/Flat-Remix ~/git/flat-icons
+cp -Rp ~/git/flat-icons/Flat\ Remix ~/.icons
+gsettings set org.gnome.desktop.interface icon-theme "Flat Remix"
 
 # Compile the local gsettings schemas after all extensions are installed.
 glib-compile-schemas ~/.local/share/glib-2.0/schemas
