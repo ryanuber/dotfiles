@@ -28,6 +28,7 @@ INSTALL_PACKAGES=(
     gstreamer1-plugin-mpg123
     gstreamer1-plugin-openh264
     gstreamer1-plugins-bad-freeworld
+    htop
     jq
     libsecret-devel
     mpg123-libs
