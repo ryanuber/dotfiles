@@ -1,6 +1,9 @@
+[core]
+    editor = "nvim"
+
 [user]
-	name = Ryan Uber
-	email = ru@ryanuber.com
+    name = Ryan Uber
+    email = ru@ryanuber.com
 
 [url "ssh://git@github.com/hashicorp"]
-  insteadOf = https://github.com/hashicorp
+    insteadOf = https://github.com/hashicorp
