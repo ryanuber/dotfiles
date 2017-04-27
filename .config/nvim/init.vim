@@ -37,11 +37,6 @@ hi CursorLine ctermbg=236
 " Remap leader key
 let mapleader=","
 
-" Resize splits sanely
-noremap <C-i> <C-w><
-noremap <C-o> <C-w>>
-noremap <C-u> <C-w>=
-
 " Remember cursor position and jump to it on file open
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") |
@@ -62,6 +57,11 @@ set splitright
 set splitbelow
 nnoremap <C-j> <C-w><Left>
 nnoremap <C-k> <C-w><Right>
+
+" Resize splits sanely
+noremap <C-[> <C-w><
+noremap <C-]> <C-w>>
+noremap <C-=> <C-w>=
 
 " Git commit messages
 au FileType gitcommit setl tw=72 wrap syn=off
