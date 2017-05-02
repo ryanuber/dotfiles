@@ -8,6 +8,7 @@ UNITS=(
     ruby
     silversearcher
     slack
+    zoom
 )
 
 for UNIT in ${UNITS[@]}; do

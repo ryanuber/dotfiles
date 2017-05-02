@@ -5,7 +5,7 @@ case $OS in
 ubuntu)
     sudo apt-get install -y dnsmasq
     sudo systemctl enable dnsmasq
-    cat | sudo tee /etc/dnsmasq.conf <<EOF
+    sudo tee /etc/dnsmasq.conf <<EOF
 no-negcache
 bind-interfaces
 listen-address=127.0.0.1

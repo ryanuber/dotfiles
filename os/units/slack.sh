@@ -7,7 +7,7 @@ SLACK_BASE_URL=https://downloads.slack-edge.com/linux_releases
 case $OS in
 ubuntu)
     ARTIFACT="slack-desktop-${SLACK_VERSION}-amd64.deb"
-    FILE=`mktemp`
+    FILE=`mktemp`.deb
     sudo apt-get install -y curl
     curl -L -o $FILE "${SLACK_BASE_URL}/${ARTIFACT}"
     sudo apt-get -y install -f $FILE
