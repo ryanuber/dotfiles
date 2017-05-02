@@ -7,6 +7,7 @@ UNITS=(
     dns
     envchain
     golang
+    neovim
     ruby
     silversearcher
     slack
