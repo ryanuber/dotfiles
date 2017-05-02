@@ -7,6 +7,7 @@ UNITS=(
     envchain
     ruby
     silversearcher
+    slack
 )
 
 for UNIT in ${UNITS[@]}; do
