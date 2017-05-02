@@ -24,5 +24,9 @@ for PROG in chruby ruby-install; do
     rm -rf $DIR
 done
 
-sed -i /chruby.sh$/d ~/.bashrc
-echo ". ~/.local/share/chruby/chruby.sh" >> ~/.bashrc
+sed -i /chruby-start/,/chruby-end/d ~/.bashrc
+cat >> ~/.bashrc <<EOF
+# chruby-start
+. ~/.local/share/chruby/chruby.sh
+# chruby-end
+EOF
