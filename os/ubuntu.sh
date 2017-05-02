@@ -5,6 +5,7 @@ UNITS=(
     aws
     dns
     envchain
+    ruby
     silversearcher
 )
 
