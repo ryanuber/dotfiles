@@ -21,3 +21,6 @@ esac
 
 sudo sed -i /^hosts:/d /etc/nsswitch.conf
 echo "hosts: files dns resolve myhostname" | sudo tee -a /etc/nsswitch.conf
+
+sudo sed -i /^DNSSEC=/d /etc/systemd/resolved.conf
+echo "DNSSEC=no" | sudo tee -a /etc/systemd/resolved.conf
