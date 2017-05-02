@@ -3,6 +3,7 @@ set -e
 
 UNITS=(
     aws
+    dns
     silversearcher
 )
 
