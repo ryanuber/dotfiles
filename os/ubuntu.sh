@@ -4,6 +4,7 @@ set -e
 UNITS=(
     aws
     dns
+    envchain
     silversearcher
 )
 
