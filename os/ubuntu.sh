@@ -3,6 +3,7 @@ set -e
 
 UNITS=(
     aws
+    chrome
     dns
     envchain
     ruby
