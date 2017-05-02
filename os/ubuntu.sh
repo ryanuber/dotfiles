@@ -6,6 +6,7 @@ UNITS=(
     chrome
     dns
     envchain
+    golang
     ruby
     silversearcher
     slack
