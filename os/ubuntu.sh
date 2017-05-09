@@ -6,6 +6,7 @@ UNITS=(
     chrome
     dns
     envchain
+    gnome-shell
     golang
     neovim
     ruby
