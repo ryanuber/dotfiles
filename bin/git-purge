@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+
+git branch --merged | sed -e /^\*/d -e /^master$/d | while read BRANCH; do
+    echo "Purging branch ${BRANCH}..."
+    git branch -d $BRANCH
+done
