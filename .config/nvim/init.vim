@@ -59,9 +59,9 @@ nnoremap <C-j> <C-w><Left>
 nnoremap <C-k> <C-w><Right>
 
 " Resize splits sanely
-noremap <C-[> <C-w><
-noremap <C-]> <C-w>>
-noremap <C-=> <C-w>=
+noremap <C-u> <C-w><
+noremap <C-i> <C-w>>
+noremap <C-o> <C-w>=
 
 " Git commit messages
 au FileType gitcommit setl tw=72 wrap syn=off
