@@ -7,7 +7,7 @@ ubuntu)
     ;;
 
 fedora)
-    sudo dnf install libsecret-devel readline-devel unzip
+    sudo dnf install -y libsecret-devel readline-devel unzip
     ;;
 esac
 

@@ -16,6 +16,6 @@ ubuntu)
 
 fedora)
     ARTIFACT="slack-${SLACK_VERSION}-0.1.fc21.x86_64.rpm"
-    sudo dnf install "${SLACK_BASE_URL}/${ARTIFACT}"
+    sudo dnf install -y "${SLACK_BASE_URL}/${ARTIFACT}"
     ;;
 esac

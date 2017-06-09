@@ -7,6 +7,6 @@ ubuntu)
     ;;
 
 fedora)
-    sudo dnf install neovim
+    sudo dnf install -y neovim
     ;;
 esac

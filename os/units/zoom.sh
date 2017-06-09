@@ -13,6 +13,6 @@ ubuntu)
     ;;
 
 fedora)
-    sudo dnf install "${ZOOM_BASE_URL}/zoom_x86_64.rpm"
+    sudo dnf install -y "${ZOOM_BASE_URL}/zoom_x86_64.rpm"
     ;;
 esac

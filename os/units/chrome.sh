@@ -13,6 +13,6 @@ ubuntu)
     ;;
 
 fedora)
-    sudo dnf install "${CHROME_BASE_URL}/google-chrome-stable_current_x86_64.rpm"
+    sudo dnf install -y "${CHROME_BASE_URL}/google-chrome-stable_current_x86_64.rpm"
     ;;
 esac

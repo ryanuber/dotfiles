@@ -7,7 +7,7 @@ ubuntu)
     ;;
 
 fedora)
-    sudo dnf install unzip
+    sudo dnf install -y unzip
     ;;
 esac
 

@@ -6,6 +6,6 @@ ubuntu)
     ;;
 
 fedora)
-    sudo dnf install the_silver_searcher
+    sudo dnf install -y the_silver_searcher
     ;;
 esac
