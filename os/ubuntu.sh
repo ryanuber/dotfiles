@@ -9,6 +9,7 @@ UNITS=(
     gnome-shell
     golang
     neovim
+    powerline-fonts
     ruby
     silversearcher
     slack
