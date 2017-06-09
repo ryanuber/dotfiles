@@ -15,6 +15,7 @@ set nosi
 set nolist
 set dir=/tmp
 set scrolloff=5
+set mouse=a
 
 " Enable filetype detection
 filetype plugin on
