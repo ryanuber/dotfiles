@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+# Enable user themes.
+sudo dnf install -y gnome-shell-extension-user-theme
+gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
+
 # Disable fancy animations
 gsettings set org.gnome.desktop.interface enable-animations false
 
@@ -38,3 +42,13 @@ gsettings set $SCHEMA appid-fc 2191ed80fb23838ebede43bc19580b7f
 gsettings set $SCHEMA weather-provider darksky.net
 gsettings set $SCHEMA city '33.1968352521268,-117.285215120784>Oceanside, San Diego County, California, 92056, United States of America >-1'
 gnome-shell-extension-tool -e openweather-extension@jenslody.de || :
+
+# Use a flat, dark theme for the shell.
+mkdir -p ~/.themes
+TEMPDIR=$(mktemp -d)
+pushd $TEMPDIR
+git clone https://github.com/nerdbeere/flat-dark-gnome-theme
+mv flat-dark-gnome-theme/flat-dark ~/.themes
+popd
+rm -rf $TEMPDIR
+gsettings set org.gnome.shell.extensions.user-theme name 'flat-dark'
