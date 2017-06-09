@@ -8,6 +8,7 @@ UNITS=(
     envchain
     gnome-shell
     golang
+    grub
     neovim
     powerline-fonts
     ruby
