@@ -57,12 +57,9 @@ match trailws /\s\+\%#\@<!$/
 set splitright
 set splitbelow
 nnoremap <C-j> <C-w><Left>
-nnoremap <C-k> <C-w><Right>
-
-" Resize splits sanely
-noremap <C-u> <C-w><
-noremap <C-i> <C-w>>
-noremap <C-o> <C-w>=
+nnoremap <C-l> <C-w><Right>
+nnoremap <C-i> <C-w><Up>
+nnoremap <C-k> <C-w><Down>
 
 " Git commit messages
 au FileType gitcommit setl tw=72 wrap syn=off
