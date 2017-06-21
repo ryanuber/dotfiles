@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
 
+# Configure the user profile.
+AVATAR_URL=https://gravatar.com/avatar/c55cecc94ea228ef48787481b2355575?s=96
+sudo curl -o /var/lib/AccountsService/icons/$USER -L $AVATAR_URL
+sudo sed -i "/^Icon=.*/d" /var/lib/AccountsService/users/$USER
+echo "Icon=/var/lib/AccountsService/icons/$USER" | sudo tee -a /var/lib/AccountsService/users/$USER
+
 # Enable user themes.
 sudo dnf install -y gnome-shell-extension-user-theme
 gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com

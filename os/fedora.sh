@@ -6,6 +6,7 @@ UNITS=(
     chrome
     dns
     envchain
+    gdm
     gnome-shell
     golang
     grub
