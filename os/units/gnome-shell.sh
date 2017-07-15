@@ -9,7 +9,7 @@ echo "Icon=/var/lib/AccountsService/icons/$USER" | sudo tee -a /var/lib/Accounts
 
 # Enable user themes.
 sudo dnf install -y gnome-shell-extension-user-theme
-gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com
+gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com || :
 
 # Disable fancy animations
 gsettings set org.gnome.desktop.interface enable-animations false
@@ -54,6 +54,7 @@ mkdir -p ~/.themes
 TEMPDIR=$(mktemp -d)
 pushd $TEMPDIR
 git clone https://github.com/nerdbeere/flat-dark-gnome-theme
+rm -rf ~/.themes/flat-dark
 mv flat-dark-gnome-theme/flat-dark ~/.themes
 popd
 rm -rf $TEMPDIR
