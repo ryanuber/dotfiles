@@ -1,7 +1,13 @@
 #!/bin/bash
 set -e
 
-export OS=`lsb_release -is | tr '[:upper:]' '[:lower:]'`
+if [ `uname` == 'Darwin' ]; then
+    export OS='mac'
+    export PROFILE=$HOME/.profile
+else
+    export OS=`lsb_release -is | tr '[:upper:]' '[:lower:]'`
+    export PROFILE=$HOME/.bashrc
+fi
 SCRIPT="${OS}.sh"
 
 if ! [ -f $SCRIPT ]; then

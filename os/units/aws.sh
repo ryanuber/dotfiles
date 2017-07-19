@@ -9,6 +9,11 @@ ubuntu)
 fedora)
     sudo dnf install -y awscli
     ;;
+
+mac)
+    brew install awscli awslogs
+    exit $?
+    ;;
 esac
 
 pip install --user awslogs

@@ -9,6 +9,11 @@ ubuntu)
 fedora)
     sudo dnf install -y libsecret-devel readline-devel unzip
     ;;
+
+macos)
+    brew install envchain
+    exit $?
+    ;;
 esac
 
 DIR=`mktemp -d`

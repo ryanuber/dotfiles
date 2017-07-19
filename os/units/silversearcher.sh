@@ -8,4 +8,8 @@ ubuntu)
 fedora)
     sudo dnf install -y the_silver_searcher
     ;;
+
+mac)
+    brew install the_silver_searcher
+    ;;
 esac

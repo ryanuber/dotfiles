@@ -1,8 +1,19 @@
 #!/bin/bash
 set -e
 
+case $OS in
+mac)
+    GOLANG_ARCH=darwin-amd64
+    SED=gsed
+    ;;
+*)
+    GOLANG_ARCH=linux-amd64
+    SED=sed
+    ;;
+esac
+
 GOLANG_VERSION=1.8.1
-GOLANG_URL="https://storage.googleapis.com/golang/go${GOLANG_VERSION}.linux-amd64.tar.gz"
+GOLANG_URL="https://storage.googleapis.com/golang/go${GOLANG_VERSION}.${GOLANG_ARCH}.tar.gz"
 
 case $OS in
 ubuntu)
@@ -17,8 +28,8 @@ mkdir -p ~/go ~/.goroot
 curl -o $FILE $GOLANG_URL
 tar -C ~/.goroot -zxvf $FILE
 
-sed -i /golang-start/,/golang-end/d ~/.bashrc
-cat >> ~/.bashrc <<EOF
+$SED -i /golang-start/,/golang-end/d $PROFILE
+cat >> $PROFILE <<EOF
 # golang-start
 export GOROOT=\$HOME/.goroot/go
 export GOPATH=\$HOME/go
