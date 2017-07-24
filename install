@@ -9,7 +9,7 @@ FILES=(
     .ssh/config
     .config/nvim
     .tmux.conf
-    bin/git-prune
+    bin/git-purge
 )
 
 function link() {
