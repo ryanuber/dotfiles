@@ -1,0 +1,36 @@
+#!/bin/bash
+
+function j() {
+    local SEARCHDIRS=(
+        ${GOPATH}/src/*/*
+        ${HOME}/git
+    )
+
+    if [ $# -lt 1 ]; then
+        echo "j - Jump to the directory of the named project"
+        echo
+        echo "Usage: j <name>"
+        echo
+        return 1
+    fi
+
+    DIR=($(find ${SEARCHDIRS[@]} -type d -name "$@" -depth 1))
+    case ${#DIR[@]} in
+    0)
+        return
+        ;;
+    1)
+        # Do nothing - we know the dir we want now.
+        ;;
+    *)
+        # Multiple matches - prompt.
+        select CHOICE in ${DIR[@]}; do
+            DIR=$CHOICE
+            break
+        done
+        ;;
+    esac
+
+    echo $DIR
+    cd $DIR
+}
