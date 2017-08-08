@@ -14,7 +14,7 @@ function j() {
         return 1
     fi
 
-    DIR=($(find ${SEARCHDIRS[@]} -type d -name "$@" -depth 1))
+    DIR=($(find ${SEARCHDIRS[@]} -type d -name "*$@*" -depth 1))
     case ${#DIR[@]} in
     0)
         return
@@ -31,6 +31,6 @@ function j() {
         ;;
     esac
 
-    echo $DIR
+    echo "--> $DIR"
     cd $DIR
 }
