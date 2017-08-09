@@ -23,11 +23,27 @@ function j() {
         # Do nothing - we know the dir we want now.
         ;;
     *)
-        # Multiple matches - prompt.
-        select CHOICE in ${DIR[@]}; do
-            DIR=$CHOICE
-            break
+        # Check if we have any exact matches.
+        CANDIDATE=""
+        for CHOICE in ${DIR[@]}; do
+            if [ "${CHOICE##*/}" == "$@" ]; then
+                if [ -n "$CANDIDATE" ]; then
+                    break
+                fi
+                CANDIDATE=$CHOICE
+            fi
         done
+
+        if [ -n "$CANDIDATE" ]; then
+            # Multiple matches, but one was an exact match. Use it.
+            DIR=$CANDIDATE
+        else
+            # Multiple choices, but no exact match - prompt.
+            select CHOICE in ${DIR[@]}; do
+                DIR=$CHOICE
+                break
+            done
+        fi
         ;;
     esac
 
