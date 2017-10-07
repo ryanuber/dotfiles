@@ -1,10 +1,10 @@
 #!/bin/bash
 
 function j() {
-    local SEARCHDIRS=(
+    local SEARCHDIRS=(${J_SEARCHDIRS:-
+        ${HOME}
         ${GOPATH}/src/*/*
-        ${HOME}/git
-    )
+    })
 
     if [ $# -lt 1 ]; then
         echo "j - Jump to the directory of the named project"
@@ -23,19 +23,18 @@ function j() {
         # Do nothing - we know the dir we want now.
         ;;
     *)
-        # Check if we have any exact matches.
         CANDIDATE=""
         for CHOICE in ${DIR[@]}; do
             if [ "${CHOICE##*/}" == "$@" ]; then
                 if [ -n "$CANDIDATE" ]; then
-                    break
+                    break 2
                 fi
                 CANDIDATE=$CHOICE
             fi
         done
 
         if [ -n "$CANDIDATE" ]; then
-            # Multiple matches, but one was an exact match. Use it.
+            # One exact match - proceed.
             DIR=$CANDIDATE
         else
             # Multiple choices, but no exact match - prompt.
