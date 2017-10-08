@@ -13,6 +13,6 @@ esac
 $SED -i /j-start/,/j-end/d $PROFILE
 cat >> $PROFILE <<EOF
 # j-start
-export J_SEARCHDIRS="\$HOME:\$GOPATH/src/*/*"
+export J_SEARCHDIRS="\$HOME/git:\$GOPATH/src/*/*"
 # j-end
 EOF
