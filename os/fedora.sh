@@ -2,6 +2,7 @@
 set -e
 
 UNITS=(
+    coreutils
     aws
     chrome
     dns
