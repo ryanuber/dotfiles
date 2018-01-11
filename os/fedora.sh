@@ -11,6 +11,7 @@ UNITS=(
     gnome-shell
     golang
     grub
+    j
     neovim
     powerline-fonts
     ruby
