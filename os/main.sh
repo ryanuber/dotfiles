@@ -4,7 +4,10 @@ set -e
 case $1 in
 -unit)
     shift
-    export TARGET_UNIT=$1
+    TARGET_UNIT=$1
+    ;;
+-list-units)
+    LIST_UNITS=1
     ;;
 esac
 
@@ -23,6 +26,13 @@ if ! [ -f $OS_SCRIPT ]; then
 fi
 
 source $OS_SCRIPT
+
+if [ -n "$LIST_UNITS" ]; then
+    for UNIT in ${UNITS[@]}; do
+        echo $UNIT
+    done
+    exit 0
+fi
 
 for UNIT in ${UNITS[@]}; do
     if [ -z "$TARGET_UNIT" -o "$UNIT" == "$TARGET_UNIT" ]; then
