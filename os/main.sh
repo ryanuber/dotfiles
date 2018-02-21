@@ -9,7 +9,16 @@ case $1 in
 -list-units)
     LIST_UNITS=1
     ;;
+-full)
+    FULL=1
+    ;;
 esac
+
+if [ -z "${TARGET_UNIT}${LIST_UNITS}${FULL}" ]; then
+    echo "Usage:"
+    echo "./main.sh [-unit UNIT] [-list-units] [-full]"
+    exit 1
+fi
 
 if [ `uname` == 'Darwin' ]; then
     export OS='mac'
