@@ -9,6 +9,7 @@ FILES=(
     .ssh/config
     .config/nvim
     .tmux.conf
+    .ssh/config
     bin/git-purge
 )
 

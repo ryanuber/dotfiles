@@ -11,7 +11,7 @@ function j() {
         return 1
     fi
 
-    DIR=($(find ${SEARCHDIRS//:/ } -type d -name "*$@*" -maxdepth 1))
+    DIR=($(find ${SEARCHDIRS//:/ } -maxdepth 1 -name "*$@*" -type d))
     case ${#DIR[@]} in
     0)
         return

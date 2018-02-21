@@ -2,6 +2,7 @@
 set -e
 
 UNITS=(
+    coreutils
     aws
     chrome
     dns
@@ -10,6 +11,7 @@ UNITS=(
     gnome-shell
     golang
     grub
+    j
     neovim
     powerline-fonts
     ruby
