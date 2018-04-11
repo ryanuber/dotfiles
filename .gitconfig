@@ -7,3 +7,6 @@
 
 [url "ssh://git@github.com/hashicorp"]
     insteadOf = https://github.com/hashicorp
+
+[push]
+    default = current
