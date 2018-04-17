@@ -7,6 +7,7 @@ UNITS=(
     aws
     envchain
     golang
+    j
     neovim
     ruby
     silversearcher
