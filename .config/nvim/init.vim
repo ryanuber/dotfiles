@@ -125,5 +125,8 @@ let g:airline_theme="ryanuber"
 " Use silver searcher instead of grep
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
 endif
+
+" Default to search by filename mode
+let g:ctrlp_by_filename = 1
