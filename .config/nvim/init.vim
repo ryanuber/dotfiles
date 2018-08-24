@@ -129,4 +129,4 @@ if executable('ag')
 endif
 
 " Default to search by filename mode
-let g:ctrlp_by_filename = 1
+"let g:ctrlp_by_filename = 1
