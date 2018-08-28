@@ -58,8 +58,7 @@ set splitright
 set splitbelow
 nnoremap <C-j> <C-w><Left>
 nnoremap <C-l> <C-w><Right>
-nnoremap <C-i> <C-w><Up>
-nnoremap <C-k> <C-w><Down>
+nnoremap <C-i> :vs<cr>
 
 " Git commit messages
 au FileType gitcommit setl tw=72 wrap syn=off
