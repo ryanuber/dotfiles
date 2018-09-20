@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-FONT_URL=https://raw.githubusercontent.com/powerline/fonts/master/UbuntuMono/Ubuntu%20Mono%20derivative%20Powerline%20Bold.ttf
+FONT_URL=https://github.com/powerline/fonts/raw/master/DejaVuSansMono/DejaVu%20Sans%20Mono%20for%20Powerline.ttf
 
 INSTALL_DIR=$HOME/.local/share/fonts
 
