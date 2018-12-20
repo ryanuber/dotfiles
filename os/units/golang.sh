@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+GOBASE=$HOME/.go
+GOROOT=$GOBASE/root
+GOPATH=$GOBASE/path
+
 case $OS in
 mac)
     GOLANG_ARCH=darwin-amd64
@@ -12,7 +16,7 @@ mac)
     ;;
 esac
 
-GOLANG_VERSION=1.11
+GOLANG_VERSION=1.11.4
 GOLANG_URL="https://storage.googleapis.com/golang/go${GOLANG_VERSION}.${GOLANG_ARCH}.tar.gz"
 
 case $OS in
@@ -23,16 +27,16 @@ esac
 
 FILE=`mktemp`
 
-rm -rf ~/.goroot
-mkdir -p ~/go ~/.goroot
+rm -rf $GOROOT
+mkdir -p $GOROOT $GOPATH
 curl -o $FILE $GOLANG_URL
-tar -C ~/.goroot -zxvf $FILE
+tar -C $GOROOT --anchored --strip-components=1 -zxvf $FILE go/*
 
 $SED -i /golang-start/,/golang-end/d $PROFILE
 cat >> $PROFILE <<EOF
 # golang-start
-export GOROOT=\$HOME/.goroot/go
-export GOPATH=\$HOME/go
-export PATH=\$GOROOT/bin:\$GOPATH/bin:\$PATH
+export GOROOT=$GOROOT
+export GOPATH=$GOPATH
+export PATH=$GOROOT/bin:\$PATH
 # golang-end
 EOF
