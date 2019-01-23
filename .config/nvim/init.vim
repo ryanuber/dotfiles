@@ -16,6 +16,7 @@ set nolist
 set dir=/tmp
 set scrolloff=5
 set mouse=a
+set smartindent
 
 " Enable filetype detection
 filetype plugin on
