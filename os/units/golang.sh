@@ -9,10 +9,12 @@ case $OS in
 mac)
     GOLANG_ARCH=darwin-amd64
     SED=gsed
+    TAR=gtar
     ;;
 *)
     GOLANG_ARCH=linux-amd64
     SED=sed
+    TAR=tar
     ;;
 esac
 
@@ -30,7 +32,7 @@ FILE=`mktemp`
 rm -rf $GOROOT
 mkdir -p $GOROOT $GOPATH
 curl -o $FILE $GOLANG_URL
-tar -C $GOROOT --anchored --strip-components=1 -zxvf $FILE go/*
+$TAR -C $GOROOT --wildcards --anchored --strip-components=1 -zxvf $FILE go/*
 
 $SED -i /golang-start/,/golang-end/d $PROFILE
 cat >> $PROFILE <<EOF
