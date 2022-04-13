@@ -18,7 +18,7 @@ mac)
     ;;
 esac
 
-GOLANG_VERSION=1.11.4
+GOLANG_VERSION=1.18
 GOLANG_URL="https://storage.googleapis.com/golang/go${GOLANG_VERSION}.${GOLANG_ARCH}.tar.gz"
 
 case $OS in
@@ -39,6 +39,6 @@ cat >> $PROFILE <<EOF
 # golang-start
 export GOROOT=$GOROOT
 export GOPATH=$GOPATH
-export PATH=$GOROOT/bin:\$PATH
+export PATH=$GOROOT/bin:$GOPATH/bin:\$PATH
 # golang-end
 EOF
