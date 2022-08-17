@@ -3,10 +3,13 @@
 
 [user]
     name = Ryan Uber
-    email = ru@ryanuber.com
+	email = ryan@hashicorp.com
 
-[url "ssh://git@github.com/hashicorp"]
-    insteadOf = https://github.com/hashicorp
+#[url "ssh://git@github.com:"]
+#    insteadOf = https://github.com/
 
 [push]
     default = current
+
+[pull]
+    rebase = true

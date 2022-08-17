@@ -8,6 +8,7 @@ FILES=(
     .shellenv
     .ssh/config
     .config/nvim
+    .local/share/nvim
     .tmux.conf
     .ssh/config
     bin/git-purge
