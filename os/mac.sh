@@ -4,6 +4,7 @@ set -e
 UNITS=(
     homebrew
     coreutils
+    dejavu-sans-mono
     aws
     envchain
     golang
