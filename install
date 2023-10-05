@@ -33,3 +33,5 @@ function link() {
 }
 
 link ${FILES[@]}
+
+git submodule init && git submodule update
