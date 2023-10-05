@@ -7,5 +7,5 @@ INSTALL_DIR=$HOME/Library/Fonts
 
 TEMPFILE=$(mktemp)
 curl -o $TEMPFILE -L $FONT_URL
-unzip -j -d $INSTALL_DIR $TEMPFILE */ttf/DejaVuSansMono.ttf
+unzip -j -o -d $INSTALL_DIR $TEMPFILE */ttf/DejaVuSansMono.ttf
 rm -f $TEMPFILE
