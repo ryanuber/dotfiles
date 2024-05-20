@@ -18,7 +18,7 @@ mac)
     ;;
 esac
 
-GOLANG_VERSION=1.21.3
+GOLANG_VERSION=1.22.3
 GOLANG_URL="https://storage.googleapis.com/golang/go${GOLANG_VERSION}.${GOLANG_ARCH}.tar.gz"
 
 case $OS in
