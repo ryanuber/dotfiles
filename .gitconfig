@@ -3,7 +3,7 @@
 
 [user]
     name = Ryan Uber
-	email = ryan@hashicorp.com
+    email = ru@ryanuber.com
 
 [url "ssh://git@github.com/"]
     insteadOf = https://github.com/

@@ -1,37 +1,48 @@
 #!/bin/bash
+set -e
 
+if [ "$1" == "-unit" ]; then
+    TARGET_UNIT=$2
+fi
+
+export PROFILE=$HOME/.profile
+
+for UNIT_FILE in units/*.sh; do
+    UNIT=${UNIT_FILE#units/}
+    UNIT=${UNIT%.sh}
+    if [ -z "$TARGET_UNIT" -o "$UNIT" == "$TARGET_UNIT" ]; then
+        echo "== Running unit ${UNIT} ==========================="
+        /bin/bash $UNIT_FILE
+        echo "== Unit ${UNIT} completed ========================="
+    fi
+done
+
+# Link static files.
 FILES=(
     .gitconfig
     .gitprompt
     .inputrc
-    .screenrc
     .shellenv
     .ssh/config
     .config/nvim
     .local/share/nvim
-    .tmux.conf
-    .ssh/config
-    bin/git-purge
+    bin
 )
+for FILE in ${FILES[@]}; do
+    LINK=$HOME/$FILE
+    TARGET=$PWD/$FILE
+    if [[ ! -d $(dirname $LINK) ]]; then
+        mkdir -p $(dirname $LINK)
+    fi
+    if [[ -L $LINK ]]; then
+        echo "==> update $LINK"
+        unlink $LINK
+    else
+        echo "==> create $LINK"
+    fi
+    ln -s $TARGET $LINK
+done
 
-function link() {
-    while [[ $# -gt 0 ]]; do
-        LINK=$HOME/$1
-        TARGET=$PWD/$1
-        shift
-        if [[ ! -d $(dirname $LINK) ]]; then
-            mkdir -p $(dirname $LINK)
-        fi
-        if [[ -L $LINK ]]; then
-            echo "==> update $LINK"
-            unlink $LINK
-        else
-            echo "==> create $LINK"
-        fi
-        ln -s $TARGET $LINK
-    done
-}
-
-link ${FILES[@]}
-
-git submodule init && git submodule update
+# Fetch submodules.
+git submodule init
+git submodule update
