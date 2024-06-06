@@ -1,5 +1,3 @@
-#!/bin/bash
-
 function j() {
     local SEARCHDIRS=${J_SEARCHDIRS:-$HOME}
 
@@ -11,7 +9,7 @@ function j() {
         return 1
     fi
 
-    DIR=($(find ${SEARCHDIRS//:/ } -maxdepth 1 -name "*$@*" -type d))
+    DIR=($(find ${(z)SEARCHDIRS//:/ } -depth 1 -name "*$@*" -type d))
     case ${#DIR[@]} in
     0)
         return
@@ -22,7 +20,7 @@ function j() {
     *)
         CANDIDATE=""
         for CHOICE in ${DIR[@]}; do
-            if [ "${CHOICE##*/}" == "$@" ]; then
+            if [ "${CHOICE##*/}" = "$@" ]; then
                 if [ -n "$CANDIDATE" ]; then
                     break 2
                 fi
