@@ -9,7 +9,7 @@ endif
 autocmd! BufWritePost $MYVIMRC call ReloadVimRC()
 
 " Do plugin things after initializing.
-colorscheme miramare
+colorscheme evergarden
 nnoremap <C-p> :Files<cr>
 let g:go_template_autocreate = 0
 
