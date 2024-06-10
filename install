@@ -37,7 +37,6 @@ FILES=(
     .ssh/config
     .config/nvim
     .local/share/nvim
-    bin
 )
 for FILE in ${FILES[@]}; do
     LINK=$HOME/$FILE
