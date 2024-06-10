@@ -1,4 +1,6 @@
 {
+"Profiles": [
+{
   "Close Sessions On End" : true,
   "Ansi 15 Color (Dark)" : {
     "Red Component" : 0.99999600648880005,
@@ -48,7 +50,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.099111050367355347
   },
-  "Guid" : "8986F155-0572-4C5C-A45A-25340A062784",
+  "Guid" : "A69AED2B-08C0-4FAE-BB5E-13F52E7112B6",
   "Cursor Color (Dark)" : {
     "Red Component" : 0.99997633695602417,
     "Color Space" : "sRGB",
@@ -821,4 +823,6 @@
     "Alpha Component" : 1,
     "Green Component" : 0.86199951171875
   }
+}
+]
 }
