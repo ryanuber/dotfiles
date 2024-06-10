@@ -17,11 +17,8 @@ mkdir -p $GOROOT $GOPATH
 curl -o $FILE $GOLANG_URL
 gtar -C $GOROOT --wildcards --anchored --strip-components=1 -zxvf $FILE go/*
 
-gsed -i /golang-start/,/golang-end/d $PROFILE
-cat >> $PROFILE <<EOF
-# golang-start
+write_env golang <<EOF
 export GOROOT=$GOROOT
 export GOPATH=$GOPATH
 export PATH=$GOROOT/bin:$GOPATH/bin:\$PATH
-# golang-end
 EOF

@@ -14,9 +14,6 @@ curl -o $FILE $FLUTTER_URL
 unzip -d $FLUTTER_SDK_DIR $FILE
 rm -f $FILE
 
-gsed -i /flutter-start/,/flutter-end/d $PROFILE
-cat >>$PROFILE <<EOF
-# flutter-start
+write_env flutter <<EOF
 export PATH=$FLUTTER_SDK_DIR/flutter/bin:\$PATH
-# flutter-end
 EOF

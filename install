@@ -5,15 +5,27 @@ if [ "$1" == "-unit" ]; then
     TARGET_UNIT=$2
 fi
 
-export PROFILE=$HOME/.profile
+write_env() {
+    if [ $1 == "" ]; then
+        echo "bad args"
+        exit 1
+    fi
+    gsed -i /${1}-start/,/${1}-end/d $HOME/.zshrc
+    cat >>$HOME/.zshrc <<EOF
+# ${1}-start
+$(< /dev/stdin)
+# ${1}-end
+EOF
+}
 
 for UNIT_FILE in units/*.sh; do
     UNIT=${UNIT_FILE#units/}
     UNIT=${UNIT%.sh}
     if [ -z "$TARGET_UNIT" -o "$UNIT" == "$TARGET_UNIT" ]; then
         echo "== Running unit ${UNIT} ==========================="
-        /bin/bash $UNIT_FILE
+        . $UNIT_FILE
         echo "== Unit ${UNIT} completed ========================="
+        exit 0
     fi
 done
 
@@ -21,7 +33,6 @@ done
 FILES=(
     .gitconfig
     .gitprompt
-    .inputrc
     .shellenv
     .ssh/config
     .config/nvim
