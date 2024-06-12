@@ -12,6 +12,8 @@ autocmd! BufWritePost $MYVIMRC call ReloadVimRC()
 colorscheme janah
 nnoremap <C-p> :Files<cr>
 let g:go_template_autocreate = 0
+let g:dart_format_on_save = v:true
+let g:dart_style_guide = 2
 
 " Split settings
 set splitright
