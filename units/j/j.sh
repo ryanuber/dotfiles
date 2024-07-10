@@ -9,7 +9,7 @@ function j() {
         return 1
     fi
 
-    DIR=($(find ${(z)SEARCHDIRS//:/ } -depth 1 -name "*$@*" -type d))
+    DIR=($(find ${(z)SEARCHDIRS//:/ } -depth 1 -maxdepth 1 -name "*$@*" -type d))
     case ${#DIR[@]} in
     0)
         return
