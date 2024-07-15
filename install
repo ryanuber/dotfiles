@@ -10,6 +10,7 @@ write_env() {
         echo "bad args"
         exit 1
     fi
+    touch $HOME/.zshrc
     gsed -i /${1}-start/,/${1}-end/d $HOME/.zshrc
     cat >>$HOME/.zshrc <<EOF
 # ${1}-start
@@ -25,7 +26,6 @@ for UNIT_FILE in units/*.sh; do
         echo "== Running unit ${UNIT} ==========================="
         . $UNIT_FILE
         echo "== Unit ${UNIT} completed ========================="
-        exit 0
     fi
 done
 
