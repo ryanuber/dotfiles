@@ -16,4 +16,5 @@ rm -f $FILE
 
 write_env flutter <<EOF
 export PATH=$FLUTTER_SDK_DIR/flutter/bin:\$PATH
+export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 EOF
