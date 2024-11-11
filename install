@@ -33,7 +33,6 @@ done
 FILES=(
     .gitconfig
     .gitprompt
-    .shellenv
     .ssh/config
     .config/nvim
     .local/share/nvim
