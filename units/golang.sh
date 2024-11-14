@@ -7,7 +7,7 @@ GOPATH=$GOBASE/path
 
 GOLANG_ARCH=darwin-arm64
 
-GOLANG_VERSION=1.22.5
+GOLANG_VERSION=1.23.3
 GOLANG_URL="https://storage.googleapis.com/golang/go${GOLANG_VERSION}.${GOLANG_ARCH}.tar.gz"
 
 FILE=`mktemp`

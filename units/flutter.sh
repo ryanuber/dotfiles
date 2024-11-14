@@ -3,7 +3,7 @@ set -e
 
 FLUTTER_SDK_DIR=$HOME/.flutter-sdk
 FLUTTER_ARCH=arm64
-FLUTTER_VERSION=3.22.2-stable
+FLUTTER_VERSION=3.24.5-stable
 FLUTTER_URL="https://storage.googleapis.com/flutter_infra_release/releases/stable/macos/flutter_macos_${FLUTTER_ARCH}_${FLUTTER_VERSION}.zip"
 
 FILE=`mktemp`
