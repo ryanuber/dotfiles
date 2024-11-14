@@ -14,6 +14,8 @@ curl -o $FILE $FLUTTER_URL
 unzip -d $FLUTTER_SDK_DIR $FILE
 rm -f $FILE
 
+$FLUTTER_SDK_DIR/flutter/bin/flutter config --no-analytics
+
 write_env flutter <<EOF
 export PATH=$FLUTTER_SDK_DIR/flutter/bin:\$PATH
 export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
