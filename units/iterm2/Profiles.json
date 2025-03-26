@@ -566,6 +566,13 @@
       "Text" : "Split Vertically with Current Profile\nSplit Vertically with Current Profile",
       "Escaping" : 2
     },
+    "0x54-0x1a0000-0x11" : {
+      "Version" : 2,
+      "Apply Mode" : 0,
+      "Action" : 25,
+      "Text" : "Split Horizontally with Current Profile\nSplit Horizontally with Current Profile",
+      "Escaping" : 2
+    },
     "0xf70d-0x20000" : {
       "Text" : "[21;2~",
       "Action" : 10
